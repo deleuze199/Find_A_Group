@@ -1,0 +1,797 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Finished requestRole method in CurrentGroup class">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Find_A_Group/CurrentGroup/CurrentGroup.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Find_A_Group/CurrentGroup/CurrentGroup.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Find_A_Group/META-INF/Find_A_Group.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Find_A_Group/login/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Find_A_Group/login/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Find_A_Group/login/LoginMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Find_A_Group/login/LoginMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Find_A_Group/memberHome/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Find_A_Group/memberHome/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Find_A_Group/register/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Find_A_Group/register/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Find_A_Group/staffHome/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Find_A_Group/staffHome/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CurrentGroup/CurrentGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CurrentGroup/CurrentGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memberHome/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memberHome/Controller.java" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="data" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="data" type="feb32156:DbDataSourceImpl" />
+        <item name="DATA: database" type="2aa06773:H2ImplModel$Database" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="data" type="feb32156:DbDataSourceImpl" />
+        <item name="DATA: database" type="2aa06773:H2ImplModel$Database" />
+        <item name="PUBLIC: schema" type="7f85d983:H2ImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="data" type="feb32156:DbDataSourceImpl" />
+        <item name="DATA: database" type="2aa06773:H2ImplModel$Database" />
+        <item name="PUBLIC: schema" type="7f85d983:H2ImplModel$Schema" />
+        <item name="GROUPS: table" type="818c1b4a:H2ImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="data" type="feb32156:DbDataSourceImpl" />
+        <item name="DATA: database" type="2aa06773:H2ImplModel$Database" />
+        <item name="PUBLIC: schema" type="7f85d983:H2ImplModel$Schema" />
+        <item name="USER: table" type="818c1b4a:H2ImplModel$Table" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="DebuggerManager">
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true">
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </breakpoint_any>
+    <ui_properties converted="true" />
+    <breakpoint_rules converted="true" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="JavaFxApplication" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectId" id="1RGDncC4FYk8A4O3DJKaHCnPZO0" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="OverrideImplement.combined" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="dynamic.classpath" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="recentsLimit" value="5" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="staffHome" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$APPLICATION_CONFIG_DIR$/consoles" />
+      <recent name="$PROJECT_DIR$/src/images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
+    </configuration>
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="login.LoginMain" />
+      <module name="Find_A_Group" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="staffHome.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@5550b947" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@5550b947" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@3686968e" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@5550b947" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@44cc7fc1" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@5550b947" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@7df4b59b" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+          </expand>
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
+      <created>1359379246138</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1359379246138</updated>
+      <workItem from="1359379250712" duration="1302000" />
+      <workItem from="1569284708406" duration="1471000" />
+      <workItem from="1569873525902" duration="2653000" />
+      <workItem from="1569885313678" duration="3169000" />
+      <workItem from="1569891616002" duration="243000" />
+      <workItem from="1569892028432" duration="135000" />
+      <workItem from="1569894846886" duration="2025000" />
+      <workItem from="1569897057988" duration="106000" />
+      <workItem from="1569971980885" duration="45000" />
+      <workItem from="1570239400429" duration="2161000" />
+      <workItem from="1570291373855" duration="307000" />
+      <workItem from="1570309125926" duration="1251000" />
+      <workItem from="1570412101460" duration="403000" />
+      <workItem from="1570470121943" duration="1523000" />
+      <workItem from="1570491734545" duration="3000" />
+      <workItem from="1570491743980" duration="6995000" />
+      <workItem from="1570539180564" duration="1573000" />
+      <workItem from="1570544518441" duration="438000" />
+      <workItem from="1570552863361" duration="426000" />
+      <workItem from="1570556422851" duration="2175000" />
+      <workItem from="1570581608654" duration="2810000" />
+      <workItem from="1570588076315" duration="382000" />
+      <workItem from="1570723087645" duration="64000" />
+      <workItem from="1570724346149" duration="94000" />
+      <workItem from="1570734842529" duration="116000" />
+      <workItem from="1570827059477" duration="2385000" />
+      <workItem from="1570831814915" duration="5808000" />
+      <workItem from="1570909289520" duration="3648000" />
+      <workItem from="1570916952292" duration="255000" />
+      <workItem from="1570993741477" duration="219000" />
+      <workItem from="1571007246518" duration="3885000" />
+      <workItem from="1571011692192" duration="2081000" />
+      <workItem from="1571098220081" duration="966000" />
+      <workItem from="1571156499882" duration="137000" />
+      <workItem from="1571262271897" duration="1023000" />
+      <workItem from="1571414054410" duration="184000" />
+      <workItem from="1571440220161" duration="255000" />
+      <workItem from="1571514773203" duration="1052000" />
+      <workItem from="1571879284842" duration="36000" />
+      <workItem from="1572301875612" duration="7188000" />
+      <workItem from="1572368776982" duration="226000" />
+      <workItem from="1572545355311" duration="1900000" />
+      <workItem from="1572548146851" duration="131000" />
+      <workItem from="1572548873176" duration="22000" />
+      <workItem from="1572562355088" duration="3602000" />
+      <workItem from="1572572433177" duration="971000" />
+      <workItem from="1572639473412" duration="4000" />
+      <workItem from="1572712129059" duration="2860000" />
+      <workItem from="1572734911166" duration="193000" />
+      <workItem from="1572749564135" duration="9970000" />
+      <workItem from="1572790876965" duration="2239000" />
+      <workItem from="1572823831203" duration="8839000" />
+      <workItem from="1572836221216" duration="6145000" />
+      <workItem from="1572842930880" duration="2954000" />
+      <workItem from="1572890519676" duration="361000" />
+      <workItem from="1572896150406" duration="16571000" />
+      <workItem from="1572921992456" duration="1072000" />
+      <workItem from="1572924145205" duration="5000" />
+      <workItem from="1572967816934" duration="6657000" />
+      <workItem from="1572989627011" duration="592000" />
+    </task>
+    <task id="LOCAL-00013" summary="Updated staff home - edit group tab page">
+      <created>1570567469748</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1570567469748</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Created enum class for Groups. Working on how to store meeting times and member roles.">
+      <created>1570587795532</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1570587795532</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Updated login controller so once staff logs-in the login window closes.">
+      <created>1570588442043</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1570588442043</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Updated password field so hidden and some fxIds">
+      <created>1570828299556</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1570828299556</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Updated javadoc">
+      <created>1570829882516</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1570829882516</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Created Register page(Controller.java and Register.fxml) to store user info to database">
+      <created>1570846965067</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1570846965068</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Created Register page(Controller.java and Register.fxml) to store user info to database">
+      <created>1570847770365</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1570847770365</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Created Member Home page and added logout buttons to member page and staff page">
+      <created>1570914853437</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1570914853437</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Updated javadoc, GUI layout, and requestRoleBtHandler method name.">
+      <created>1570916004928</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1570916004928</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Updated logout button's fxid">
+      <created>1570916258006</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1570916258006</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Made Controller classes public inorder to be opened">
+      <created>1570917174222</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1570917174222</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Thomas' edits to the Member Home screen">
+      <created>1571008801202</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1571008801202</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Updated GUI">
+      <created>1571009317559</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1571009317559</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Updated GUI">
+      <created>1571010908266</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1571010908266</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Updated member home page controller methods">
+      <created>1571011355984</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1571011355984</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Updated fxid names to be more descriptive.">
+      <created>1571099027817</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1571099027818</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Updated fxid names to be more descriptive.">
+      <created>1571099259174</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1571099259174</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Updated GUI">
+      <created>1571517504970</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1571517504970</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Working of getting the current groups the member user is in.">
+      <created>1572309249970</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1572309249970</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Still working of getting the current groups the member user is in. Changes String[] to ArrayList">
+      <created>1572547659679</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1572547659680</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Still working of getting the current groups the member user is in. Changes String[] to ArrayList">
+      <created>1572563669127</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1572563669127</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Still working of getting the current groups the member user is in. Changes String[] to ArrayList">
+      <created>1572563741529</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1572563741529</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Created Groups table to store the name, meeting time, meeting place, current roles, and available roles">
+      <created>1572566383875</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1572566383875</updated>
+    </task>
+    <task id="LOCAL-00036" summary="set currentGroups and currentGroupRequestRoles to consist of groups in user table">
+      <created>1572712784483</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1572712784483</updated>
+    </task>
+    <task id="LOCAL-00037" summary="set updateGroupsLV and currentGroupsLV to consist of groups in user table">
+      <created>1572732370183</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1572732370184</updated>
+    </task>
+    <task id="LOCAL-00038" summary="set updateGroupsLV and currentGroupsLV to consist of groups in user table">
+      <created>1572732887584</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1572732887584</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Replaced redundant code with a class CurrentGroups that will handle all of database queries">
+      <created>1572751164646</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1572751164646</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Working of getting ListView form members current groups">
+      <created>1572760043772</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1572760043772</updated>
+    </task>
+    <task id="LOCAL-00041" summary="set ListView form members current groups and populated label areas">
+      <created>1572793103307</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1572793103307</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Working on getting clubOption ListView to populate only groups that the user is not currently in.">
+      <created>1572832176303</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1572832176303</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Working on getting clubOption ListView to populate only groups that the user is not currently in.">
+      <created>1572832495166</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1572832495166</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Working on getting clubOption ListView to populate only groups that the user is not currently in.">
+      <created>1572832778017</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1572832778017</updated>
+    </task>
+    <task id="LOCAL-00045" summary="made clubOption ListView to populate only groups that the user is not currently in.">
+      <created>1572836712261</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1572836712261</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Created addGroup method to CurrentGroup class and is being classed when Join Group button is pressed. Method adds Group name to user table">
+      <created>1572842012054</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1572842012055</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Updated initialize method in memberHome/Controller and updated database">
+      <created>1572842318514</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1572842318514</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Updated initialize method in memberHome/Controller and updated database">
+      <created>1572842373919</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1572842373919</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Javadoc comments added">
+      <created>1572842825103</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1572842825103</updated>
+    </task>
+    <task id="LOCAL-00050" summary="made request role ListView populated with available roles from database">
+      <created>1572845192599</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1572845192600</updated>
+    </task>
+    <task id="LOCAL-00051" summary="Started working on requestRole method for member">
+      <created>1572846177988</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1572846177989</updated>
+    </task>
+    <task id="LOCAL-00052" summary="Updated Registration to include Graduate Date and if text fields are empty it will not add to database">
+      <created>1572900417558</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1572900417559</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Created checkIfDeleteUser method to remove any graduated user from the user table">
+      <created>1572910396891</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1572910396891</updated>
+    </task>
+    <task id="LOCAL-00054" summary="Made register method test if graduation date entered is valid. If date entered not valid user is still created but graduation date is not added to table">
+      <created>1572910929960</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1572910929960</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Reformatted and added Javadoc">
+      <created>1572911529535</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1572911529536</updated>
+    </task>
+    <task id="LOCAL-00056" summary="Updated GUI layout">
+      <created>1572912061140</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1572912061141</updated>
+    </task>
+    <task id="LOCAL-00057" summary="Updated GUI layout">
+      <created>1572912727339</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1572912727340</updated>
+    </task>
+    <task id="LOCAL-00058" summary="Continued work on the requestRole method in CurrentGroup class">
+      <created>1572915522229</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1572915522229</updated>
+    </task>
+    <task id="LOCAL-00059" summary="Finished requestRole method in CurrentGroup class">
+      <created>1572916342795</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1572916342795</updated>
+    </task>
+    <task id="LOCAL-00060" summary="Finished requestRole method in CurrentGroup class">
+      <created>1572916783623</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1572916783624</updated>
+    </task>
+    <task id="LOCAL-00061" summary="Finished requestRole method in CurrentGroup class">
+      <created>1572969880696</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1572969880697</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/master" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="HEAD" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+    <MESSAGE value="Updated member home page controller methods" />
+    <MESSAGE value="Updated fxid names to be more descriptive." />
+    <MESSAGE value="Updated GUI" />
+    <MESSAGE value="Working of getting the current groups the member user is in." />
+    <MESSAGE value="Still working of getting the current groups the member user is in. Changes String[] to ArrayList" />
+    <MESSAGE value="Created Groups table to store the name, meeting time, meeting place, current roles, and available roles" />
+    <MESSAGE value="set currentGroups and currentGroupRequestRoles to consist of groups in user table" />
+    <MESSAGE value="set updateGroupsLV and currentGroupsLV to consist of groups in user table" />
+    <MESSAGE value="Replaced redundant code with a class CurrentGroups that will handle all of database queries" />
+    <MESSAGE value="Working of getting ListView form members current groups" />
+    <MESSAGE value="set ListView form members current groups and populated label areas" />
+    <MESSAGE value="Working on getting clubOption ListView to populate only groups that the user is not currently in." />
+    <MESSAGE value="made clubOption ListView to populate only groups that the user is not currently in." />
+    <MESSAGE value="Created addGroup method to CurrentGroup class and is being classed when Join Group button is pressed. Method adds Group name to user table" />
+    <MESSAGE value="Updated initialize method in memberHome/Controller and updated database" />
+    <MESSAGE value="Javadoc comments added" />
+    <MESSAGE value="made request role ListView populated with available roles from database" />
+    <MESSAGE value="Started working on requestRole method for member" />
+    <MESSAGE value="Updated Registration to include Graduate Date and if text fields are empty it will not add to database" />
+    <MESSAGE value="Created checkIfDeleteUser method to remove any graduated user from the user table" />
+    <MESSAGE value="Made register method test if graduation date entered is valid. If date entered not valid user is still created but graduation date is not added to table" />
+    <MESSAGE value="Reformatted and added Javadoc" />
+    <MESSAGE value="Updated GUI layout" />
+    <MESSAGE value="Continued work on the requestRole method in CurrentGroup class" />
+    <MESSAGE value="Finished requestRole method in CurrentGroup class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished requestRole method in CurrentGroup class" />
+  </component>
+</project>

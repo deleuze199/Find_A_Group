@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="410.0" prefWidth="350.0" style="-fx-background-color: #025700;" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="register.Controller">
+  <children>
+    <Label layoutX="103.0" layoutY="6.0" prefHeight="44.0" prefWidth="143.0" text="Register" textFill="WHITE">
+      <font>
+        <Font size="36.0" />
+      </font>
+    </Label>
+    <GridPane layoutY="52.0" prefHeight="316.0" prefWidth="350.0" style="-fx-background-color: #000269;">
+      <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+      <children>
+        <Label prefHeight="20.0" prefWidth="175.0" text="School ID" textAlignment="CENTER" textFill="WHITE">
+          <padding>
+            <Insets left="60.0" />
+          </padding>
+          <font>
+            <Font name="Arial" size="13.0" />
+          </font>
+        </Label>
+        <Label prefHeight="20.0" prefWidth="175.0" text="PIN" textFill="WHITE" GridPane.rowIndex="1">
+          <padding>
+            <Insets left="78.0" />
+          </padding>
+        </Label>
+        <TextField fx:id="schoolId" promptText="Enter School ID" GridPane.columnIndex="1">
+          <GridPane.margin>
+            <Insets left="15.0" right="15.0" />
+          </GridPane.margin>
+        </TextField>
+        <TextField fx:id="pin" promptText="Enter PIN" GridPane.columnIndex="1" GridPane.rowIndex="1">
+          <GridPane.margin>
+            <Insets left="15.0" right="15.0" />
+          </GridPane.margin>
+        </TextField>
+        <Label prefHeight="17.0" prefWidth="175.0" text="Are you a part of the staff?" textFill="WHITE" GridPane.rowIndex="3">
+          <padding>
+            <Insets left="4.0" />
+          </padding>
+        </Label>
+        <CheckBox mnemonicParsing="false" onAction="#setStaffBoolean" text="Yes" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3">
+          <GridPane.margin>
+            <Insets left="60.0" />
+          </GridPane.margin>
+        </CheckBox>
+        <Button fx:id="exitRegisterBt" mnemonicParsing="false" onAction="#exitRegistrationBtHandler" text="Exit" GridPane.rowIndex="4">
+          <GridPane.margin>
+            <Insets left="66.0" />
+          </GridPane.margin>
+        </Button>
+        <Button fx:id="tryRegisterBt" mnemonicParsing="false" onAction="#registerUserBtHandler" text="Register" GridPane.columnIndex="1" GridPane.rowIndex="4">
+          <GridPane.margin>
+            <Insets left="53.0" />
+          </GridPane.margin>
+        </Button>
+            <Label prefHeight="17.0" prefWidth="176.0" text="Graduation Date" textFill="WHITE" GridPane.rowIndex="2">
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+               <GridPane.margin>
+                  <Insets bottom="15.0" />
+               </GridPane.margin>
+            </Label>
+            <TextField fx:id="graduateDateTF" promptText="Month/Day/Year" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="15.0" right="15.0" />
+               </GridPane.margin>
+            </TextField>
+            <Label prefHeight="17.0" prefWidth="176.0" text="(If Known)" textFill="WHITE" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets top="15.0" />
+               </GridPane.margin>
+               <padding>
+                  <Insets left="58.0" />
+               </padding>
+            </Label>
+      </children>
+    </GridPane>
+    <Label fx:id="registerFailMessage" layoutX="12.0" layoutY="373.0" prefHeight="34.0" prefWidth="321.0" textFill="WHITE" />
+  </children>
+</AnchorPane>

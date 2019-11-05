@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="791.0" prefWidth="760.0" style="-fx-background-color: #025700;" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="staffHome.Controller">
+  <children>
+    <Text fill="WHITE" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Staff Home Page" textAlignment="CENTER" wrappingWidth="760.0">
+      <font>
+        <Font size="48.0" />
+      </font>
+    </Text>
+    <TabPane layoutY="68.0" prefHeight="723.0" prefWidth="760.0" tabClosingPolicy="UNAVAILABLE">
+      <tabs>
+        <Tab text="Group Details">
+          <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #000269;">
+              <children>
+                <ListView fx:id="currentGroupsLV" layoutX="14.0" layoutY="82.0" onMouseClicked="#staffListViewClick" prefHeight="310.0" prefWidth="200.0" />
+                <Label layoutX="57.0" layoutY="39.0" prefHeight="23.0" prefWidth="114.0" text="Select Group" textFill="WHITE">
+                  <font>
+                    <Font size="18.0" />
+                  </font>
+                </Label>
+                <Label layoutX="274.0" layoutY="39.0" text="Meeting Times and Place" textFill="WHITE">
+                  <font>
+                    <Font size="18.0" />
+                  </font>
+                </Label>
+                <Label layoutX="577.0" layoutY="39.0" text="Group Roles" textFill="WHITE">
+                  <font>
+                    <Font size="18.0" />
+                  </font>
+                </Label>
+                <Label fx:id="groupMeetingLabel" layoutX="275.0" layoutY="82.0" prefHeight="380.0" prefWidth="210.0" style="-fx-border-color: white;" textFill="WHITE">
+                  <font>
+                    <Font size="14.0" />
+                  </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                </Label>
+                <Label fx:id="groupRolesLabel" layoutX="524.0" layoutY="82.0" prefHeight="380.0" prefWidth="210.0" style="-fx-border-color: white;" textFill="WHITE">
+                  <font>
+                    <Font size="14.0" />
+                  </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                </Label>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="Update Group">
+          <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #000269;">
+              <children>
+                <Button layoutX="570.0" layoutY="332.0" mnemonicParsing="false" onAction="#acceptRolesBtHandler" text="Accept Group Role" />
+                <Label layoutX="56.0" layoutY="39.0" prefHeight="23.0" prefWidth="114.0" text="Select Group" textFill="WHITE">
+                  <font>
+                    <Font size="18.0" />
+                  </font>
+                </Label>
+                <ListView fx:id="updateGroupsLV" layoutX="13.0" layoutY="82.0" onMouseClicked="#staffListViewClick" prefHeight="310.0" prefWidth="200.0" />
+                <Label layoutX="240.0" layoutY="39.0" text="Update Meeting Times and Place" textFill="WHITE">
+                  <font>
+                    <Font size="18.0" />
+                  </font>
+                </Label>
+                <Label layoutX="538.0" layoutY="39.0" text="Requested Group Roles" textFill="WHITE">
+                  <font>
+                    <Font size="18.0" />
+                  </font>
+                </Label>
+                <Button layoutX="285.0" layoutY="630.0" mnemonicParsing="false" onAction="#updateTimesBtHandler" text="Update Meeting times" />
+                <GridPane layoutX="252.0" layoutY="82.0" prefHeight="535.0" prefWidth="257.0" style="-fx-border-color: white;">
+                  <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="106.72061157226562" minWidth="10.0" prefWidth="27.598663330078125" />
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="106.72061157226562" minWidth="10.0" prefWidth="56.157440185546875" />
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="167.52328491210938" minWidth="10.0" prefWidth="160.0" />
+                  </columnConstraints>
+                  <rowConstraints>
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  </rowConstraints>
+                  <children>
+                    <CheckBox mnemonicParsing="false" prefHeight="10.0" prefWidth="10.0" GridPane.rowIndex="11">
+                      <GridPane.margin>
+                        <Insets left="3.0" />
+                      </GridPane.margin>
+                    </CheckBox>
+                    <CheckBox mnemonicParsing="false" prefHeight="10.0" prefWidth="10.0" GridPane.rowIndex="3">
+                      <GridPane.margin>
+                        <Insets left="3.0" />
+                      </GridPane.margin>
+                    </CheckBox>
+                    <CheckBox mnemonicParsing="false" prefHeight="10.0" prefWidth="10.0" GridPane.rowIndex="5">
+                      <GridPane.margin>
+                        <Insets left="3.0" />
+                      </GridPane.margin>
+                    </CheckBox>
+                    <CheckBox mnemonicParsing="false" prefHeight="10.0" prefWidth="10.0" GridPane.rowIndex="7">
+                      <GridPane.margin>
+                        <Insets left="3.0" />
+                      </GridPane.margin>
+                    </CheckBox>
+                    <CheckBox mnemonicParsing="false" prefHeight="10.0" prefWidth="10.0" GridPane.rowIndex="9">
+                      <GridPane.margin>
+                        <Insets left="3.0" />
+                      </GridPane.margin>
+                    </CheckBox>
+                    <CheckBox mnemonicParsing="false" prefHeight="10.0" prefWidth="10.0" GridPane.rowIndex="1">
+                      <GridPane.margin>
+                        <Insets left="3.0" />
+                      </GridPane.margin>
+                    </CheckBox>
+                    <CheckBox mnemonicParsing="false" prefHeight="10.0" prefWidth="10.0" GridPane.rowIndex="13">
+                      <GridPane.margin>
+                        <Insets left="3.0" />
+                      </GridPane.margin>
+                    </CheckBox>
+                    <Label prefHeight="10.0" text="Mon." textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                      <font>
+                        <Font size="14.0" />
+                      </font>
+                      <GridPane.margin>
+                        <Insets left="10.0" />
+                      </GridPane.margin>
+                    </Label>
+                    <Label prefHeight="10.0" text="Tue." textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                      <font>
+                        <Font size="14.0" />
+                      </font>
+                      <GridPane.margin>
+                        <Insets left="10.0" />
+                      </GridPane.margin>
+                    </Label>
+                    <Label prefHeight="10.0" text="Wed." textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                      <font>
+                        <Font size="14.0" />
+                      </font>
+                      <GridPane.margin>
+                        <Insets left="10.0" />
+                      </GridPane.margin>
+                    </Label>
+                    <Label prefHeight="10.0" text="Thu." textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                      <font>
+                        <Font size="14.0" />
+                      </font>
+                      <GridPane.margin>
+                        <Insets left="10.0" />
+                      </GridPane.margin>
+                    </Label>
+                    <Label prefHeight="10.0" text="Fri." textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                      <font>
+                        <Font size="14.0" />
+                      </font>
+                      <GridPane.margin>
+                        <Insets left="10.0" />
+                      </GridPane.margin>
+                    </Label>
+                    <Label prefHeight="10.0" text="Sat." textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="11">
+                      <font>
+                        <Font size="14.0" />
+                      </font>
+                      <GridPane.margin>
+                        <Insets left="10.0" />
+                      </GridPane.margin>
+                    </Label>
+                    <Label prefHeight="10.0" text="Sun." textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="13">
+                      <font>
+                        <Font size="14.0" />
+                      </font>
+                      <GridPane.margin>
+                        <Insets left="10.0" />
+                      </GridPane.margin>
+                    </Label>
+                    <Label text="Day" textFill="WHITE" GridPane.columnIndex="1">
+                      <font>
+                        <Font size="14.0" />
+                      </font>
+                      <GridPane.margin>
+                        <Insets left="10.0" />
+                      </GridPane.margin>
+                    </Label>
+                    <Label prefHeight="18.0" text="Time" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="2">
+                      <font>
+                        <Font size="14.0" />
+                      </font>
+                      <GridPane.margin>
+                        <Insets left="65.0" />
+                      </GridPane.margin>
+                    </Label>
+                    <TextField promptText="eg. 1pm-2apm" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                      <GridPane.margin>
+                        <Insets right="5.0" />
+                      </GridPane.margin>
+                    </TextField>
+                    <TextField promptText="eg. 1pm-2apm" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                      <GridPane.margin>
+                        <Insets right="5.0" />
+                      </GridPane.margin>
+                    </TextField>
+                    <TextField promptText="eg. 1pm-2apm" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                      <GridPane.margin>
+                        <Insets right="5.0" />
+                      </GridPane.margin>
+                    </TextField>
+                    <TextField promptText="eg. 1pm-2apm" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                      <GridPane.margin>
+                        <Insets right="5.0" />
+                      </GridPane.margin>
+                    </TextField>
+                    <TextField promptText="eg. 1pm-2apm" GridPane.columnIndex="2" GridPane.rowIndex="9">
+                      <GridPane.margin>
+                        <Insets right="5.0" />
+                      </GridPane.margin>
+                    </TextField>
+                    <TextField promptText="eg. 1pm-2apm" GridPane.columnIndex="2" GridPane.rowIndex="11">
+                      <GridPane.margin>
+                        <Insets right="5.0" />
+                      </GridPane.margin>
+                    </TextField>
+                    <TextField promptText="eg. 1pm-2apm" GridPane.columnIndex="2" GridPane.rowIndex="13">
+                      <GridPane.margin>
+                        <Insets right="5.0" />
+                      </GridPane.margin>
+                    </TextField>
+                              <TextField promptText="eg. Room 102" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets right="5.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField promptText="eg. Room 102" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                                 <GridPane.margin>
+                                    <Insets right="5.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField promptText="eg. Room 102" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                                 <GridPane.margin>
+                                    <Insets right="5.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField promptText="eg. Room 102" GridPane.columnIndex="2" GridPane.rowIndex="8">
+                                 <GridPane.margin>
+                                    <Insets right="5.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField promptText="eg. Room 102" GridPane.columnIndex="2" GridPane.rowIndex="10">
+                                 <GridPane.margin>
+                                    <Insets right="5.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField promptText="eg. Room 102" GridPane.columnIndex="2" GridPane.rowIndex="12">
+                                 <GridPane.margin>
+                                    <Insets right="5.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField promptText="eg. Room 102" GridPane.columnIndex="2" GridPane.rowIndex="14">
+                                 <GridPane.margin>
+                                    <Insets right="5.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                  </children>
+                </GridPane>
+                        <ListView fx:id="requestedRoleLV" layoutX="537.0" layoutY="82.0" prefHeight="229.0" prefWidth="200.0" />
+                        <Label layoutX="533.0" layoutY="407.0" text="Create Requestable Role" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="createRoleTA" layoutX="537.0" layoutY="468.0" prefHeight="27.0" prefWidth="200.0" />
+                        <Button layoutX="552.0" layoutY="529.0" mnemonicParsing="false" onAction="#createRoleBtHandler" text="Create Requestable Role" />
+                        <Label layoutX="539.0" layoutY="430.0" text="(if several roles seperate by &quot;, &quot;)" textFill="WHITE" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+            <Tab text="Create Group">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="691.0" prefWidth="760.0" style="-fx-background-color: #000269;">
+                           <children>
+                              <Button layoutX="627.0" layoutY="616.0" mnemonicParsing="false" onAction="#updateRolesBtHandler" text="Create Group" />
+                              <Label layoutX="301.0" layoutY="39.0" text="Set Meeting Times" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="56.0" layoutY="39.0" prefHeight="23.0" prefWidth="114.0" text="Group Name" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="544.0" layoutY="39.0" text="Create Group Roles" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <GridPane layoutX="514.0" layoutY="337.0" prefHeight="245.0" prefWidth="225.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                              </GridPane>
+                              <TextField layoutX="30.0" layoutY="82.0" />
+                              <TextField layoutX="276.0" layoutY="82.0" prefHeight="27.0" prefWidth="200.0" />
+                              <TextField layoutX="276.0" layoutY="117.0" prefHeight="27.0" prefWidth="200.0" />
+                              <TextField layoutX="276.0" layoutY="151.0" prefHeight="27.0" prefWidth="200.0" />
+                              <TextField layoutX="544.0" layoutY="82.0" />
+                              <TextField layoutX="543.0" layoutY="151.0" />
+                              <TextField layoutX="543.0" layoutY="117.0" />
+                              <TextField layoutX="543.0" layoutY="188.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+      </tabs>
+    </TabPane>
+    <Button fx:id="staffLogoutBt" layoutX="685.0" layoutY="14.0" mnemonicParsing="false" onAction="#logoutBtHandler" text="Logout" />
+  </children>
+</AnchorPane>

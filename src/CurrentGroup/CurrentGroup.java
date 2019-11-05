@@ -195,7 +195,11 @@ public class CurrentGroup {
       rs = pstmt.executeQuery();
       if (rs.next()) {
         String currentGroup = rs.getString("Groups");
-        currentGroup += ", " + newGroup;
+        if (currentGroup.equals("null")) {
+          currentGroup = newGroup;
+        } else {
+          currentGroup += ", " + newGroup;
+        }
         String sql1 = "UPDATE USER SET GROUPS = ? WHERE SCHOOLID = ?";
         PreparedStatement pstmt1 = conn.prepareStatement(sql1);
         // Execute SQL string

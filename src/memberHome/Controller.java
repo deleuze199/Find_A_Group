@@ -91,6 +91,7 @@ public class Controller implements Initializable {
         .listViewClick(currentGroupRequestRolesLV.getSelectionModel().getSelectedItem(),
             "AvailRoles"));
     requestRoleOutputLabel.setText("");
+    joinedGroupLabel.setText("");
   }
 
   /**

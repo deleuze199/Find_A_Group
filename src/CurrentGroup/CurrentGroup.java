@@ -234,16 +234,16 @@ public class CurrentGroup {
       pstmt.setString(1, selectedGroup);
       rs = pstmt.executeQuery();
       if (rs.next()) {
-        String currentAvailiableRoles = rs.getString(1);
-        if (currentAvailiableRoles == null) {
-          currentAvailiableRoles = name + "/" + role;
+        String currentRequestedRoles = rs.getString(1);
+        if (currentRequestedRoles == null) {
+          currentRequestedRoles = name + "/" + role;
         } else {
-          currentAvailiableRoles += ", " + name + "/" + role;
+          currentRequestedRoles += ", " + name + "/" + role;
         }
         String sql1 = "UPDATE GROUPS SET REQUESTEDROLES = ? WHERE NAME = ?";
         PreparedStatement pstmt1 = conn.prepareStatement(sql1);
         // Execute SQL string
-        pstmt1.setString(1, currentAvailiableRoles);
+        pstmt1.setString(1, currentRequestedRoles);
         pstmt1.setString(2, selectedGroup);
         pstmt1.executeUpdate();
       }
@@ -254,8 +254,115 @@ public class CurrentGroup {
     }
   }
 
-  public String acceptRoleRequest() {
+  public String acceptRoleRequest(String selectedGroup, String role, String name) {
+    Connection conn;
+    ResultSet rs;
+    try {
+      // Register JDBC driver
+      Class.forName("org.h2.Driver");
+      // Create a connection to database
+      conn = DriverManager.getConnection("jdbc:h2:./res/data", "", "");
+      String sql = "SELECT TAKENROLES FROM GROUPS WHERE NAME = ?";
+      PreparedStatement pstmt = conn.prepareStatement(sql);
+      // Execute SQL string
+      pstmt.setString(1, selectedGroup);
+      rs = pstmt.executeQuery();
+      if (rs.next()) {
+        String currentTakenRoles = rs.getString(1);
+        if (currentTakenRoles == null) {
+          currentTakenRoles = (name + "/" + role);
+        } else {
+          currentTakenRoles += ", " + (name + "/" + role);
+        }
+        String sql1 = "UPDATE GROUPS SET TAKENROLES = ? WHERE NAME = ?";
+        PreparedStatement pstmt1 = conn.prepareStatement(sql1);
+        // Execute SQL string
+        pstmt1.setString(1, currentTakenRoles);
+        pstmt1.setString(2, selectedGroup);
+        pstmt1.executeUpdate();
+        String sql2 = "SELECT AVAILROLES FROM GROUPS WHERE NAME = ?";
+        PreparedStatement pstmt2 = conn.prepareStatement(sql2);
+        // Execute SQL string
+        pstmt2.setString(1, selectedGroup);
+        rs = pstmt2.executeQuery();
+        if (rs.next()) {
+          String originalAvailableRoles = rs.getString(1);
+          System.out.println(originalAvailableRoles);
+          if (originalAvailableRoles != null) {
+            String[] updatedAvailableRolesArr = originalAvailableRoles.split(", " + role);
+            String updatedAvailableRoles = "";
+            for (int i = 0; i < updatedAvailableRolesArr.length; i++) {
+              if (updatedAvailableRolesArr.length == 1) {
+                if (updatedAvailableRolesArr[0].equals(role)) {
+                  updatedAvailableRoles = "";
+                  System.out.println(updatedAvailableRoles + " 00");
+                } else {
+                  updatedAvailableRoles = updatedAvailableRolesArr[0];
+                  System.out.println(updatedAvailableRoles + " 1");
+                }
+              } else if (updatedAvailableRolesArr[i] != null) {
+                updatedAvailableRoles += updatedAvailableRolesArr[i];
+                System.out.println(updatedAvailableRolesArr[i] + " 2");
+              }
+            }
+            if (updatedAvailableRoles.equals("")) {
+              updatedAvailableRoles = null;
+              System.out.println(updatedAvailableRoles + " 3");
+            }
+            String sql3 = "UPDATE GROUPS SET AVAILROLES = ? WHERE NAME = ?";
+            PreparedStatement pstmt3 = conn.prepareStatement(sql3);
+            // Execute SQL string
+            pstmt3.setString(1, updatedAvailableRoles);
+            pstmt3.setString(2, selectedGroup);
+            System.out.println("Avail updated to " + updatedAvailableRoles);
+            pstmt3.executeUpdate();
 
-    return "ok";
+            String sql4 = "SELECT REQUESTEDROLES FROM GROUPS WHERE NAME = ?";
+            PreparedStatement pstmt4 = conn.prepareStatement(sql4);
+            // Execute SQL string
+            pstmt4.setString(1, selectedGroup);
+            rs = pstmt4.executeQuery();
+            if (rs.next()) {
+              String originalRequetedRoles = rs.getString(1);
+              System.out.println(originalRequetedRoles);
+              if (originalRequetedRoles != null) {
+                String[] updatedRequestedRolesArr = originalRequetedRoles
+                    .split(", " + (name + "/" + role));
+                String updatedRequestedRoles = "";
+                for (int i = 0; i < updatedRequestedRolesArr.length; i++) {
+                  if (updatedRequestedRolesArr.length == 1) {
+                    if (updatedRequestedRolesArr[0].equals(name + "/" + role)) {
+                      updatedRequestedRoles = "";
+                      System.out.println(updatedRequestedRoles + " 00");
+                    } else {
+                      updatedRequestedRoles = updatedRequestedRolesArr[0];
+                      System.out.println(updatedRequestedRoles + " 1");
+                    }
+                  } else if (updatedRequestedRolesArr[i] != null) {
+                    updatedRequestedRoles += updatedRequestedRolesArr[i];
+                    System.out.println(updatedRequestedRolesArr[i] + " 2");
+                  }
+                }
+                if (updatedRequestedRoles.equals("")) {
+                  updatedRequestedRoles = null;
+                  System.out.println(updatedRequestedRoles + " 3");
+                }
+                String sql5 = "UPDATE GROUPS SET REQUESTEDROLES = ? WHERE NAME = ?";
+                PreparedStatement pstmt5 = conn.prepareStatement(sql5);
+                // Execute SQL string
+                pstmt5.setString(1, updatedRequestedRoles);
+                pstmt5.setString(2, selectedGroup);
+                System.out.println("updated request " + updatedRequestedRoles);
+                pstmt5.executeUpdate();
+              }
+            }
+          }
+        }
+      }
+      return "Role Accepted";
+    } catch (Exception e) {
+      e.printStackTrace();
+      return "Fail to Accept Role";
+    }
   }
 }

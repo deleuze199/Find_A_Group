@@ -35,6 +35,12 @@ public class Controller implements Initializable {
   private Label groupRolesLabel;
   @FXML
   private ListView<String> requestedRoleLV;
+  @FXML
+  private Label acceptRoleOutputLabel;
+  @FXML
+  private Label createRoleOutputLabel;
+  @FXML
+  private Label updateTimeAndPlaceOutputLabel;
 
   CurrentGroup cGroup = new CurrentGroup(schoolID);
 
@@ -55,6 +61,9 @@ public class Controller implements Initializable {
    * cGroup.listViewClick method the get the string for each label.
    */
   public void staffListViewClick() {
+    acceptRoleOutputLabel.setText("");
+    createRoleOutputLabel.setText("");
+    updateTimeAndPlaceOutputLabel.setText("");
     groupMeetingLabel.setText(
         cGroup.listViewClick(currentGroupsLV.getSelectionModel().getSelectedItem(), "Time", true));
     groupRolesLabel.setText(cGroup
@@ -66,7 +75,11 @@ public class Controller implements Initializable {
   }
 
   public void acceptRolesBtHandler() {
-
+    String role = requestedRoleLV.getSelectionModel().getSelectedItem();
+    String[] name_role = role.split("/");
+    if (role != null) {
+      acceptRoleOutputLabel.setText(cGroup.acceptRoleRequest(updateGroupsLV.getSelectionModel().getSelectedItem(), name_role[1], name_role[0]));
+    }
   }
 
   public void createRoleBtHandler() {

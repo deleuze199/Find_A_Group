@@ -85,8 +85,8 @@
                     <Font size="18.0" />
                   </font>
                 </Label>
-                <Button layoutX="285.0" layoutY="630.0" mnemonicParsing="false" onAction="#updateTimesBtHandler" text="Update Meeting times" />
-                <GridPane layoutX="252.0" layoutY="82.0" prefHeight="535.0" prefWidth="257.0" style="-fx-border-color: white;">
+                <Button layoutX="303.0" layoutY="584.0" mnemonicParsing="false" onAction="#updateTimesBtHandler" text="Update Meeting times" />
+                <GridPane layoutX="252.0" layoutY="82.0" prefHeight="476.0" prefWidth="257.0" style="-fx-border-color: white;">
                   <columnConstraints>
                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="106.72061157226562" minWidth="10.0" prefWidth="27.598663330078125" />
                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="106.72061157226562" minWidth="10.0" prefWidth="56.157440185546875" />
@@ -290,14 +290,29 @@
                   </children>
                 </GridPane>
                         <ListView fx:id="requestedRoleLV" layoutX="537.0" layoutY="82.0" prefHeight="229.0" prefWidth="200.0" />
-                        <Label layoutX="533.0" layoutY="407.0" text="Create Requestable Role" textFill="WHITE">
+                        <Label layoutX="533.0" layoutY="439.0" text="Create Requestable Role" textFill="WHITE">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="createRoleTA" layoutX="537.0" layoutY="468.0" prefHeight="27.0" prefWidth="200.0" />
-                        <Button layoutX="552.0" layoutY="529.0" mnemonicParsing="false" onAction="#createRoleBtHandler" text="Create Requestable Role" />
-                        <Label layoutX="539.0" layoutY="430.0" text="(if several roles seperate by &quot;, &quot;)" textFill="WHITE" />
+                        <TextField fx:id="createRoleTA" layoutX="524.0" layoutY="507.0" prefHeight="27.0" prefWidth="226.0" promptText="eg. Assistan Coach,  Team Leader" />
+                        <Button layoutX="553.0" layoutY="570.0" mnemonicParsing="false" onAction="#createRoleBtHandler" text="Create Requestable Role" />
+                        <Label layoutX="539.0" layoutY="462.0" text="(if several roles seperate by &quot;, &quot;)" textFill="WHITE" />
+                        <Label layoutX="576.0" layoutY="381.0" prefHeight="23.0" prefWidth="125.0" text="Role Accepted" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="582.0" layoutY="619.0" prefHeight="23.0" prefWidth="112.0" text="Role Created" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="277.0" layoutY="631.0" prefHeight="23.0" prefWidth="209.0" text="Time and Place Updated" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
               </children>
             </AnchorPane>
           </content>

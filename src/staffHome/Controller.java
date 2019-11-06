@@ -59,7 +59,8 @@ public class Controller implements Initializable {
         cGroup.listViewClick(currentGroupsLV.getSelectionModel().getSelectedItem(), "Time", true));
     groupRolesLabel.setText(cGroup
         .listViewClick(currentGroupsLV.getSelectionModel().getSelectedItem(), "TakenRoles", false));
-    requestedRoleLV.getItems().clear();;
+    requestedRoleLV.getItems().clear();
+    ;
     requestedRoleLV.getItems().addAll(cGroup
         .listViewClick(updateGroupsLV.getSelectionModel().getSelectedItem(), "RequestedRoles"));
   }

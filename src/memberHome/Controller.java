@@ -77,7 +77,6 @@ public class Controller implements Initializable {
    * It calls the cGroup.listViewClick method the get the output from the database.
    */
   public void memberListViewClick() {
-
     currentGroupMeetingLabel.setText(
         cGroup.listViewClick(currentGroupsLV.getSelectionModel().getSelectedItem(), "Time", true));
     currentGroupRolesLabel.setText(cGroup
@@ -106,10 +105,11 @@ public class Controller implements Initializable {
    */
   public void requestRoleBtHandler() {
     String name = requestRoleTA.getText().trim();
-    if (!name.equals("")) {
+    String role = requestRolesLV.getSelectionModel().getSelectedItem();
+    if ((!name.equals("")) && (!(role == null))) {
       requestRoleOutputLabel.setText(cGroup
           .requestRole(currentGroupRequestRolesLV.getSelectionModel().getSelectedItem(),
-              requestRolesLV.getSelectionModel().getSelectedItem(), name));
+              role, name));
     }
   }
 

@@ -48,7 +48,7 @@ public class CurrentGroup {
       rs = pstmt.executeQuery();
       if (rs.next()) {
         String currentGroup = rs.getString("Groups");
-        if(currentGroup != null) {
+        if (currentGroup != null) {
           String[] currentGroupsArr = currentGroup.split(", ");
           currentGroupsL = Arrays.asList(currentGroupsArr);
         }
@@ -120,16 +120,18 @@ public class CurrentGroup {
       rs = pstmt.executeQuery();
       if (rs.next()) {
         String databaseOutput = rs.getString(outputArea);
-        String[] databaseOutputArr = databaseOutput.split(", ");
-        if (ifMeetingLabel) {
-          String databaseOutputPlace = rs.getString("Place");
-          databaseOutputPlaceArr = databaseOutputPlace.split(", ");
-        }
-        for (int i = 0; i < databaseOutputArr.length; i++) {
+        if (databaseOutput != null) {
+          String[] databaseOutputArr = databaseOutput.split(", ");
           if (ifMeetingLabel) {
-            finalOutPutString += databaseOutputPlaceArr[i] + "\n";
+            String databaseOutputPlace = rs.getString("Place");
+            databaseOutputPlaceArr = databaseOutputPlace.split(", ");
           }
-          finalOutPutString += databaseOutputArr[i] + "\n\n";
+          for (int i = 0; i < databaseOutputArr.length; i++) {
+            if (ifMeetingLabel) {
+              finalOutPutString += databaseOutputPlaceArr[i] + "\n";
+            }
+            finalOutPutString += databaseOutputArr[i] + "\n\n";
+          }
         }
       }
     } catch (Exception e) {
@@ -161,8 +163,10 @@ public class CurrentGroup {
       rs = pstmt.executeQuery();
       if (rs.next()) {
         String databaseOutput = rs.getString(outputArea);
-        String[] databaseOutputArr = databaseOutput.split(", ");
-        finalOutPutList = Arrays.asList(databaseOutputArr);
+        if (databaseOutput != null) {
+          String[] databaseOutputArr = databaseOutput.split(", ");
+          finalOutPutList = Arrays.asList(databaseOutputArr);
+        }
       }
     } catch (Exception e) {
       e.printStackTrace();
@@ -248,5 +252,10 @@ public class CurrentGroup {
       e.printStackTrace();
       return "Fail to Request Role";
     }
+  }
+
+  public String acceptRoleRequest() {
+
+    return "ok";
   }
 }

@@ -97,7 +97,10 @@ public class Controller implements Initializable {
    * This method is a handler to join a group that is displayed by the memberMouseClick method.
    */
   public void joinGroupBtHandler() {
-    joinedGroupLabel.setText(cGroup.addGroup(clubOptions.getSelectionModel().getSelectedItem()));
+    String joinThisGroup = clubOptions.getSelectionModel().getSelectedItem();
+    if (joinThisGroup != null) {
+      joinedGroupLabel.setText(cGroup.addGroup(joinThisGroup));
+    }
   }
 
   /**

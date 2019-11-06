@@ -254,6 +254,15 @@ public class CurrentGroup {
     }
   }
 
+  /**
+   * This method adds the requested role selected to the TANKENROLES column and removes it from the
+   * AVAILROLES and REQUESTEDREOLES columns.
+   *
+   * @param selectedGroup is the current group selected
+   * @param role          is the role of the requested role
+   * @param name          is the name that goes along with the requested role
+   * @return a Srting that states weather or not the method was successful
+   */
   public String acceptRoleRequest(String selectedGroup, String role, String name) {
     Connection conn;
     ResultSet rs;
@@ -292,10 +301,13 @@ public class CurrentGroup {
             String[] updatedAvailableRolesArr = originalAvailableRoles.split(", ");
             String updatedAvailableRoles = "";
             for (int i = 0; i < updatedAvailableRolesArr.length; i++) {
-              if (!updatedAvailableRolesArr[i].equals(role) && updatedAvailableRolesArr[i] != null) {
+              if (!updatedAvailableRolesArr[i].equals(role)
+                  && updatedAvailableRolesArr[i] != null) {
                 if (updatedAvailableRoles.equals("")) {
                   updatedAvailableRoles += updatedAvailableRolesArr[i];
-                  System.out.println("initial add " + updatedAvailableRolesArr[i] + " to avail, when role = " + role);
+                  System.out.println(
+                      "initial add " + updatedAvailableRolesArr[i] + " to avail, when role = "
+                          + role);
                 } else {
                   updatedAvailableRoles += ", " + updatedAvailableRolesArr[i];
                   System.out.println("adding " + updatedAvailableRolesArr[i] + " to avail");
@@ -326,10 +338,12 @@ public class CurrentGroup {
                 String[] updatedRequestedRolesArr = originalRequetedRoles.split(", ");
                 String updatedRequestedRoles = "";
                 for (int i = 0; i < updatedRequestedRolesArr.length; i++) {
-                  if (!updatedRequestedRolesArr[i].equals (name + "/" + role) && updatedRequestedRolesArr[i] != null) {
+                  if (!updatedRequestedRolesArr[i].equals(name + "/" + role)
+                      && updatedRequestedRolesArr[i] != null) {
                     if (updatedRequestedRoles.equals("")) {
                       updatedRequestedRoles += updatedRequestedRolesArr[i];
-                      System.out.println("initial add " + updatedAvailableRolesArr[i] + " to requested, when request = " + name + "/" + role);
+                      System.out.println("initial add " + updatedAvailableRolesArr[i]
+                          + " to requested, when request = " + name + "/" + role);
                     } else {
                       updatedRequestedRoles += ", " + updatedRequestedRolesArr[i];
                       System.out.println("adding " + updatedAvailableRolesArr[i] + " to requested");

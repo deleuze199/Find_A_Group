@@ -74,13 +74,18 @@ public class Controller implements Initializable {
         .listViewClick(updateGroupsLV.getSelectionModel().getSelectedItem(), "RequestedRoles"));
   }
 
+  /**
+   * This method called the acceptRoleRequest method in the CurrentGroup class and populates the
+   * acceptRoleOutputLabel with a message that say weather or not it was successful.
+   */
   public void acceptRolesBtHandler() {
     String requestedRole = requestedRoleLV.getSelectionModel().getSelectedItem();
     String[] name_role = requestedRole.split("/");
     String name = name_role[0];
     String role = name_role[1];
     if (requestedRole != null) {
-      acceptRoleOutputLabel.setText(cGroup.acceptRoleRequest(updateGroupsLV.getSelectionModel().getSelectedItem(), role, name));
+      acceptRoleOutputLabel.setText(cGroup
+          .acceptRoleRequest(updateGroupsLV.getSelectionModel().getSelectedItem(), role, name));
     }
   }
 

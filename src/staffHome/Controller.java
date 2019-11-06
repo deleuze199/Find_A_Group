@@ -103,10 +103,15 @@ public class Controller implements Initializable {
     updateTimeAndPlaceOutputLabel.setText(cGroup.addToMeetingInfo());
   }
 
+  /**
+   * This method populates the createRoleOutputLabel. It calls the createRole method in CurrentGroup
+   * class.
+   */
   public void createRoleBtHandler() {
     String newRole = createRoleTA.getText().trim();
     if (!newRole.equals("")) {
-      createRoleOutputLabel.setText(cGroup.createRole(updateGroupsLV.getSelectionModel().getSelectedItem(), newRole));
+      createRoleOutputLabel.setText(
+          cGroup.createRole(updateGroupsLV.getSelectionModel().getSelectedItem(), newRole));
     }
   }
 

@@ -130,7 +130,7 @@
                 <ListView fx:id="currentGroupRequestRolesLV" layoutX="13.0" layoutY="82.0" onMouseClicked="#memberListViewClick" prefHeight="310.0" prefWidth="200.0" />
                         <ListView fx:id="requestRolesLV" layoutX="400.0" layoutY="93.0" prefHeight="289.0" prefWidth="200.0" />
                         <TextField fx:id="requestRoleTA" layoutX="416.0" layoutY="472.0" promptText="eg. John" />
-                        <Label layoutX="447.0" layoutY="424.0" text=" Enter Name" textFill="WHITE">
+                        <Label layoutX="397.0" layoutY="423.0" text=" Enter Requesters Name" textFill="WHITE">
                            <font>
                               <Font size="18.0" />
                            </font>

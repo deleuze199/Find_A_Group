@@ -422,4 +422,13 @@ public class CurrentGroup {
       return "Failed to Create Role";
     }
   }
+
+  public String createGroup(String groupName, String groupMeetingTimes, String groupMeetingPlace, String groupRoles) {
+    System.out.println("name " + groupName);
+    System.out.println("time " + groupMeetingTimes);
+    System.out.println("place " + groupMeetingPlace);
+    System.out.println("roles " + groupRoles);
+    System.out.println();
+    return "ok";
+  }
 }

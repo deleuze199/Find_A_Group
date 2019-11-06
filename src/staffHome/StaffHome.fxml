@@ -295,7 +295,7 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="createRoleTA" layoutX="524.0" layoutY="507.0" prefHeight="27.0" prefWidth="226.0" promptText="eg. Assistan Coach,  Team Leader" />
+                        <TextField fx:id="createRoleTF" layoutX="524.0" layoutY="507.0" prefHeight="27.0" prefWidth="226.0" promptText="eg. Assistan Coach,  Team Leader" />
                         <Button layoutX="553.0" layoutY="570.0" mnemonicParsing="false" onAction="#createRoleBtHandler" text="Create Requestable Role" />
                         <Label layoutX="539.0" layoutY="462.0" text="(if several roles seperate by &quot;, &quot;)" textFill="WHITE" />
                         <Label fx:id="acceptRoleOutputLabel" alignment="CENTER" layoutX="558.0" layoutY="381.0" prefHeight="23.0" prefWidth="162.0" textAlignment="CENTER" textFill="WHITE">
@@ -324,7 +324,7 @@
                      <children>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="691.0" prefWidth="760.0" style="-fx-background-color: #000269;">
                            <children>
-                              <Button layoutX="331.0" layoutY="559.0" mnemonicParsing="false" onAction="#updateRolesBtHandler" text="Create Group" />
+                              <Button layoutX="331.0" layoutY="559.0" mnemonicParsing="false" onAction="#createGroupBtHandler" text="Create Group" />
                               <Label layoutX="105.0" layoutY="196.0" text="Set Meeting Times" textFill="WHITE">
                                  <font>
                                     <Font size="18.0" />
@@ -340,20 +340,25 @@
                                     <Font size="18.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="288.0" layoutY="79.0" prefHeight="27.0" prefWidth="189.0" promptText="eg. Lacrosse" />
-                              <TextField layoutX="59.0" layoutY="251.0" prefHeight="27.0" prefWidth="250.0" promptText="eg. Monday: 7:00 - 9:00 PM" />
-                              <TextField layoutX="59.0" layoutY="292.0" prefHeight="27.0" prefWidth="250.0" promptText="eg. Tuesday: 6:00 - 8:00 PM" />
-                              <TextField layoutX="59.0" layoutY="332.0" prefHeight="27.0" prefWidth="250.0" promptText="eg. Wednesday: 6:00 - 8:30 PM" />
-                              <TextField layoutX="256.0" layoutY="491.0" prefHeight="27.0" prefWidth="250.0" promptText="eg. Assistan Coach,  Team Leader" />
+                              <TextField fx:id="newGroupNameTF" layoutX="288.0" layoutY="79.0" prefHeight="27.0" prefWidth="189.0" promptText="eg. Lacrosse" />
+                              <TextField fx:id="newGroupTime1TF" layoutX="59.0" layoutY="251.0" prefHeight="27.0" prefWidth="250.0" promptText="eg. Monday: 7:00 - 9:00 PM" />
+                              <TextField fx:id="newGroupTime2TF" layoutX="59.0" layoutY="292.0" prefHeight="27.0" prefWidth="250.0" promptText="eg. Tuesday: 6:00 - 8:00 PM" />
+                              <TextField fx:id="newGroupTime3TF" layoutX="59.0" layoutY="332.0" prefHeight="27.0" prefWidth="250.0" promptText="eg. Wednesday: 6:00 - 8:30 PM" />
+                              <TextField fx:id="newGroupRolesTF" layoutX="256.0" layoutY="491.0" prefHeight="27.0" prefWidth="250.0" promptText="eg. Assistan Coach,  Team Leader" />
                               <Label layoutX="516.0" layoutY="196.0" text="Set Meeting Place" textFill="WHITE">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="468.0" layoutY="251.0" prefHeight="27.0" prefWidth="250.0" promptText="eg. Lacrosse Field Two" />
-                              <TextField layoutX="468.0" layoutY="292.0" prefHeight="27.0" prefWidth="250.0" promptText="eg. Gymnasium" />
-                              <TextField layoutX="468.0" layoutY="332.0" prefHeight="27.0" prefWidth="250.0" promptText="eg. Lacrosse Field Two" />
+                              <TextField fx:id="newGroupPlace1TF" layoutX="468.0" layoutY="251.0" prefHeight="27.0" prefWidth="250.0" promptText="eg. Lacrosse Field Two" />
+                              <TextField fx:id="newGroupPlace2TF" layoutX="468.0" layoutY="292.0" prefHeight="27.0" prefWidth="250.0" promptText="eg. Gymnasium" />
+                              <TextField fx:id="newGroupPlace3TF" layoutX="468.0" layoutY="332.0" prefHeight="27.0" prefWidth="250.0" promptText="eg. Lacrosse Field Two" />
                               <Label layoutX="281.0" layoutY="455.0" text="(if several roles seperate by &quot;, &quot;)" textFill="WHITE" />
+                              <Label fx:id="createGroupOutputLabel" alignment="CENTER" layoutX="286.0" layoutY="619.0" prefHeight="23.0" prefWidth="194.0" text="Failed to Create Group" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
                            </children>
                         </AnchorPane>
                      </children>

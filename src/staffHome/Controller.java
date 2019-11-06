@@ -43,16 +43,27 @@ public class Controller implements Initializable {
   @FXML
   private Label updateTimeAndPlaceOutputLabel;
   @FXML
-  private TextField createRoleTA;
-
+  private TextField createRoleTF;
+  @FXML
+  private Label createGroupOutputLabel;
+  @FXML
+  private TextField newGroupNameTF;
+  @FXML
+  private TextField newGroupTime1TF;
+  @FXML
+  private TextField newGroupTime2TF;
+  @FXML
+  private TextField newGroupTime3TF;
+  @FXML
+  private TextField newGroupRolesTF;
+  @FXML
+  private TextField newGroupPlace1TF;
+  @FXML
+  private TextField newGroupPlace2TF;
+  @FXML
+  private TextField newGroupPlace3TF;
 
   CurrentGroup cGroup = new CurrentGroup(schoolID);
-
-  /**
-   * This method is a handler to update the group member roles.
-   */
-  public void updateRolesBtHandler() {
-  }
 
   /**
    * This method populates the the current Meeting Times and Roles Labels. It calls the
@@ -108,12 +119,56 @@ public class Controller implements Initializable {
    * class.
    */
   public void createRoleBtHandler() {
-    String newRole = createRoleTA.getText().trim();
+    String newRole = createRoleTF.getText().trim();
     if (!newRole.equals("")) {
       createRoleOutputLabel.setText(
           cGroup.createRole(updateGroupsLV.getSelectionModel().getSelectedItem(), newRole));
     }
   }
+
+  /**
+   * This method populates createGroupOutputLabel. It calls the createGroup method in the
+   * CurrentGroup class.
+   */
+  public void createGroupBtHandler() {
+    String newGroupName = newGroupNameTF.getText().trim();
+    String newGroupTime1 = newGroupTime1TF.getText().trim();
+    String newGroupPlace1 = newGroupPlace1TF.getText().trim();
+    String newGroupTime2 = newGroupTime2TF.getText().trim();
+    String newGroupPlace2 = newGroupPlace2TF.getText().trim();
+    String newGroupTime3 = newGroupTime3TF.getText().trim();
+    String newGroupPlace3 = newGroupPlace3TF.getText().trim();
+    String newGroupRoles = newGroupRolesTF.getText().trim();
+    if (!newGroupName.equals("")) {
+      String newGroupTime = null;
+      String newGroupPlace = null;
+      // if top one time and place field filled out
+      if ((!newGroupTime1.equals("")) && (!newGroupPlace1.equals(""))) {
+        newGroupTime = newGroupTime1;
+        newGroupPlace = newGroupPlace1;
+
+        // if top two time and place field filled out
+        if ((!newGroupTime1.equals("")) && (!newGroupPlace1.equals("")) && (!newGroupTime2.equals(""))
+            && (!newGroupPlace2.equals(""))) {
+          newGroupTime += ", " + newGroupTime2;
+          newGroupPlace += ", " + newGroupPlace2;
+
+          // if all time and place fields filled out
+          if ((!newGroupTime1.equals("")) && (!newGroupPlace1.equals("")) && (!newGroupTime2.equals(""))
+              && (!newGroupPlace2.equals("")) && (!newGroupTime3.equals("")) && (!newGroupPlace3
+              .equals(""))) {
+            newGroupTime += ", " + newGroupTime3;
+            newGroupPlace += ", " + newGroupPlace3;
+          }
+        }
+      }
+      if (newGroupRoles.equals("")) {
+        newGroupRoles = null;
+      }
+      createGroupOutputLabel.setText(cGroup.createGroup(newGroupName, newGroupTime, newGroupPlace, newGroupRoles));
+    }
+  }
+
 
   /**
    * This method is a handler to logout and return back to the login screen.

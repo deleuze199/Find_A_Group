@@ -243,9 +243,10 @@ public class CurrentGroup {
         pstmt1.setString(2, selectedGroup);
         pstmt1.executeUpdate();
       }
+      return "Role Requested";
     } catch (Exception e) {
       e.printStackTrace();
+      return "Fail to Request Role";
     }
-    return "Role Requested";
   }
 }

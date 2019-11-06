@@ -135,7 +135,7 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <Label fx:id="requestRoleOutputLabel" layoutX="431.0" layoutY="610.0" prefHeight="27.0" prefWidth="137.0" text="Role Requested" textFill="WHITE">
+                        <Label fx:id="requestRoleOutputLabel" layoutX="431.0" layoutY="610.0" prefHeight="27.0" prefWidth="137.0" textFill="WHITE">
                            <font>
                               <Font size="18.0" />
                            </font>

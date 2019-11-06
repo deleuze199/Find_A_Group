@@ -287,22 +287,19 @@ public class CurrentGroup {
         rs = pstmt2.executeQuery();
         if (rs.next()) {
           String originalAvailableRoles = rs.getString(1);
-          System.out.println(originalAvailableRoles);
+          System.out.println("Original avail " + originalAvailableRoles);
           if (originalAvailableRoles != null) {
-            String[] updatedAvailableRolesArr = originalAvailableRoles.split(", " + role);
+            String[] updatedAvailableRolesArr = originalAvailableRoles.split(", ");
             String updatedAvailableRoles = "";
             for (int i = 0; i < updatedAvailableRolesArr.length; i++) {
-              if (updatedAvailableRolesArr.length == 1) {
-                if (updatedAvailableRolesArr[0].equals(role)) {
-                  updatedAvailableRoles = "";
-                  System.out.println(updatedAvailableRoles + " 00");
+              if (!updatedAvailableRolesArr[i].equals(role) && updatedAvailableRolesArr[i] != null) {
+                if (updatedAvailableRoles.equals("")) {
+                  updatedAvailableRoles += updatedAvailableRolesArr[i];
+                  System.out.println("initial add " + updatedAvailableRolesArr[i] + " to avail, when role = " + role);
                 } else {
-                  updatedAvailableRoles = updatedAvailableRolesArr[0];
-                  System.out.println(updatedAvailableRoles + " 1");
+                  updatedAvailableRoles += ", " + updatedAvailableRolesArr[i];
+                  System.out.println("adding " + updatedAvailableRolesArr[i] + " to avail");
                 }
-              } else if (updatedAvailableRolesArr[i] != null) {
-                updatedAvailableRoles += updatedAvailableRolesArr[i];
-                System.out.println(updatedAvailableRolesArr[i] + " 2");
               }
             }
             if (updatedAvailableRoles.equals("")) {
@@ -326,22 +323,19 @@ public class CurrentGroup {
               String originalRequetedRoles = rs.getString(1);
               System.out.println(originalRequetedRoles);
               if (originalRequetedRoles != null) {
-                String[] updatedRequestedRolesArr = originalRequetedRoles
-                    .split(", " + (name + "/" + role));
+                String[] updatedRequestedRolesArr = originalRequetedRoles.split(", ");
                 String updatedRequestedRoles = "";
                 for (int i = 0; i < updatedRequestedRolesArr.length; i++) {
-                  if (updatedRequestedRolesArr.length == 1) {
-                    if (updatedRequestedRolesArr[0].equals(name + "/" + role)) {
-                      updatedRequestedRoles = "";
-                      System.out.println(updatedRequestedRoles + " 00");
+                  if (!updatedRequestedRolesArr[i].equals (name + "/" + role) && updatedRequestedRolesArr[i] != null) {
+                    if (updatedRequestedRoles.equals("")) {
+                      updatedRequestedRoles += updatedRequestedRolesArr[i];
+                      System.out.println("initial add " + updatedAvailableRolesArr[i] + " to requested, when request = " + name + "/" + role);
                     } else {
-                      updatedRequestedRoles = updatedRequestedRolesArr[0];
-                      System.out.println(updatedRequestedRoles + " 1");
+                      updatedRequestedRoles += ", " + updatedRequestedRolesArr[i];
+                      System.out.println("adding " + updatedAvailableRolesArr[i] + " to requested");
                     }
-                  } else if (updatedRequestedRolesArr[i] != null) {
-                    updatedRequestedRoles += updatedRequestedRolesArr[i];
-                    System.out.println(updatedRequestedRolesArr[i] + " 2");
                   }
+
                 }
                 if (updatedRequestedRoles.equals("")) {
                   updatedRequestedRoles = null;

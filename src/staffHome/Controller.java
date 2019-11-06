@@ -75,10 +75,12 @@ public class Controller implements Initializable {
   }
 
   public void acceptRolesBtHandler() {
-    String role = requestedRoleLV.getSelectionModel().getSelectedItem();
-    String[] name_role = role.split("/");
-    if (role != null) {
-      acceptRoleOutputLabel.setText(cGroup.acceptRoleRequest(updateGroupsLV.getSelectionModel().getSelectedItem(), name_role[1], name_role[0]));
+    String requestedRole = requestedRoleLV.getSelectionModel().getSelectedItem();
+    String[] name_role = requestedRole.split("/");
+    String name = name_role[0];
+    String role = name_role[1];
+    if (requestedRole != null) {
+      acceptRoleOutputLabel.setText(cGroup.acceptRoleRequest(updateGroupsLV.getSelectionModel().getSelectedItem(), role, name));
     }
   }
 

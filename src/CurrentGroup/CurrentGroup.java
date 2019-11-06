@@ -261,7 +261,7 @@ public class CurrentGroup {
    * @param selectedGroup is the current group selected
    * @param role          is the role of the requested role
    * @param name          is the name that goes along with the requested role
-   * @return a Srting that states weather or not the method was successful
+   * @return a Sting that states weather or not the method was successful
    */
   public String acceptRoleRequest(String selectedGroup, String role, String name) {
     Connection conn;
@@ -371,6 +371,55 @@ public class CurrentGroup {
     } catch (Exception e) {
       e.printStackTrace();
       return "Fail to Accept Role";
+    }
+  }
+
+  public String resetMeetingInfo() {
+    return "";
+  }
+
+  public String addToMeetingInfo() {
+    return "";
+  }
+
+  /**
+   * This method adds role to the AVAILROLES column.
+   *
+   * @param selectedGroup is the group that the role is being added to
+   * @param role          is the role being added
+   * @return a String that states weather or not the method was successful
+   */
+  public String createRole(String selectedGroup, String role) {
+    Connection conn;
+    ResultSet rs;
+    try {
+      // Register JDBC driver
+      Class.forName("org.h2.Driver");
+      // Create a connection to database
+      conn = DriverManager.getConnection("jdbc:h2:./res/data", "", "");
+      String sql = "SELECT AVAILROLES FROM GROUPS WHERE NAME = ?";
+      PreparedStatement pstmt = conn.prepareStatement(sql);
+      // Execute SQL string
+      pstmt.setString(1, selectedGroup);
+      rs = pstmt.executeQuery();
+      if (rs.next()) {
+        String currentAvailableRoles = rs.getString(1);
+        if (currentAvailableRoles == null) {
+          currentAvailableRoles = role;
+        } else {
+          currentAvailableRoles += ", " + role;
+        }
+        String sql1 = "UPDATE GROUPS SET AVAILROLES = ? WHERE NAME = ?";
+        PreparedStatement pstmt1 = conn.prepareStatement(sql1);
+        // Execute SQL string
+        pstmt1.setString(1, currentAvailableRoles);
+        pstmt1.setString(2, selectedGroup);
+        pstmt1.executeUpdate();
+      }
+      return "Role Created";
+    } catch (Exception e) {
+      e.printStackTrace();
+      return "Failed to Create Role";
     }
   }
 }

@@ -14,6 +14,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
@@ -41,14 +42,11 @@ public class Controller implements Initializable {
   private Label createRoleOutputLabel;
   @FXML
   private Label updateTimeAndPlaceOutputLabel;
+  @FXML
+  private TextField createRoleTA;
+
 
   CurrentGroup cGroup = new CurrentGroup(schoolID);
-
-  /**
-   * This method is a handler to update the group meeting times.
-   */
-  public void updateTimesBtHandler() {
-  }
 
   /**
    * This method is a handler to update the group member roles.
@@ -89,8 +87,27 @@ public class Controller implements Initializable {
     }
   }
 
-  public void createRoleBtHandler() {
+  /**
+   * This method populates the updateTimeAndPlaceOutputLabel. It calls the resetMeetingInfo method
+   * in CurrentGroup class.
+   */
+  public void resetTimesBtHandler() {
+    updateTimeAndPlaceOutputLabel.setText(cGroup.resetMeetingInfo());
+  }
 
+  /**
+   * This method populates the updateTimeAndPlaceOutputLabel. It calls the addToMeetingInfo method
+   * in CurrentGroup class.
+   */
+  public void addTimesBtHandler() {
+    updateTimeAndPlaceOutputLabel.setText(cGroup.addToMeetingInfo());
+  }
+
+  public void createRoleBtHandler() {
+    String newRole = createRoleTA.getText().trim();
+    if (!newRole.equals("")) {
+      createRoleOutputLabel.setText(cGroup.createRole(updateGroupsLV.getSelectionModel().getSelectedItem(), newRole));
+    }
   }
 
   /**

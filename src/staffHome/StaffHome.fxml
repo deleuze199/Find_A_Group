@@ -85,7 +85,7 @@
                     <Font size="18.0" />
                   </font>
                 </Label>
-                <Button layoutX="303.0" layoutY="584.0" mnemonicParsing="false" onAction="#updateTimesBtHandler" text="Update Meeting times" />
+                <Button layoutX="314.0" layoutY="570.0" mnemonicParsing="false" onAction="#resetTimesBtHandler" text="Reset Meeting Info" />
                 <GridPane layoutX="252.0" layoutY="82.0" prefHeight="476.0" prefWidth="257.0" style="-fx-border-color: white;">
                   <columnConstraints>
                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="106.72061157226562" minWidth="10.0" prefWidth="27.598663330078125" />
@@ -298,21 +298,22 @@
                         <TextField fx:id="createRoleTA" layoutX="524.0" layoutY="507.0" prefHeight="27.0" prefWidth="226.0" promptText="eg. Assistan Coach,  Team Leader" />
                         <Button layoutX="553.0" layoutY="570.0" mnemonicParsing="false" onAction="#createRoleBtHandler" text="Create Requestable Role" />
                         <Label layoutX="539.0" layoutY="462.0" text="(if several roles seperate by &quot;, &quot;)" textFill="WHITE" />
-                        <Label fx:id="acceptRoleOutputLabel" layoutX="576.0" layoutY="381.0" prefHeight="23.0" prefWidth="125.0" text="Role Accepted" textFill="WHITE">
+                        <Label fx:id="acceptRoleOutputLabel" alignment="CENTER" layoutX="558.0" layoutY="381.0" prefHeight="23.0" prefWidth="162.0" textAlignment="CENTER" textFill="WHITE">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <Label fx:id="createRoleOutputLabel" layoutX="582.0" layoutY="619.0" prefHeight="23.0" prefWidth="112.0" text="Role Created" textFill="WHITE">
+                        <Label fx:id="createRoleOutputLabel" alignment="CENTER" layoutX="545.0" layoutY="622.0" prefHeight="23.0" prefWidth="188.0" textAlignment="CENTER" textFill="WHITE">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <Label fx:id="updateTimeAndPlaceOutputLabel" layoutX="277.0" layoutY="631.0" prefHeight="23.0" prefWidth="209.0" text="Time and Place Updated" textFill="WHITE">
+                        <Label fx:id="updateTimeAndPlaceOutputLabel" layoutX="276.0" layoutY="642.0" prefHeight="23.0" prefWidth="209.0" text="Time and Place Updated" textFill="WHITE">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
+                        <Button layoutX="309.0" layoutY="606.0" mnemonicParsing="false" onAction="#addTimesBtHandler" text="Add To Meeting Info" />
               </children>
             </AnchorPane>
           </content>

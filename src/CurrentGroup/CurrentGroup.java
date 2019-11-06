@@ -48,12 +48,8 @@ public class CurrentGroup {
       rs = pstmt.executeQuery();
       if (rs.next()) {
         String currentGroup = rs.getString("Groups");
-        String[] currentGroupsArr = currentGroup.split(", ");
-        if (currentGroupsArr[0].equals("null")) {
-          for(int i = 1; i < (currentGroupsArr.length); i++) {
-            currentGroupsL.add(currentGroupsArr[i]);
-          }
-          } else {
+        if(currentGroup != null) {
+          String[] currentGroupsArr = currentGroup.split(", ");
           currentGroupsL = Arrays.asList(currentGroupsArr);
         }
       }
@@ -207,10 +203,11 @@ public class CurrentGroup {
         pstmt1.setString(2, schoolId);
         pstmt1.executeUpdate();
       }
+      return "Group Joined";
     } catch (Exception e) {
       e.printStackTrace();
+      return "Failed to Join";
     }
-    return "Group Joined";
   }
 
   /**

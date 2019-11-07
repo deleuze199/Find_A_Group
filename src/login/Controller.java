@@ -107,7 +107,7 @@ public class Controller {
   public void registerBtHandler() {
     try {
       FXMLLoader fxmlLoader = new FXMLLoader(
-          getClass().getResource("/register/Register.fxml"));
+          getClass().getResource("/register/NewRegister.fxml"));
       Parent root1 = fxmlLoader.load();
       Stage stage = new Stage();
       stage.setScene(new Scene(root1));

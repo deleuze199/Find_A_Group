@@ -176,7 +176,6 @@ public class Controller implements Initializable {
     }
   }
 
-
   /**
    * This method is a handler to logout and return back to the login screen.
    */

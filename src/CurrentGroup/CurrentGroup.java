@@ -16,6 +16,8 @@ import java.util.List;
 public class CurrentGroup {
 
   String schoolId;
+  Connection conn;
+  ResultSet rs;
 
   /**
    * This is the constructor for the CurrentGroup class and sets the schoolId String.
@@ -34,8 +36,6 @@ public class CurrentGroup {
    */
   public List<String> getCurrentGroupsList() {
     List<String> currentGroupsL = new ArrayList<>();
-    Connection conn;
-    ResultSet rs;
     try {
       // Register JDBC driver
       Class.forName("org.h2.Driver");
@@ -68,8 +68,6 @@ public class CurrentGroup {
   public List<String> getAvailableGroupsList(List<String> currentGroupsL) {
     List<String> availableGroupsL = new ArrayList<>();
     List<String> allGroupsL = new ArrayList<>();
-    Connection conn;
-    ResultSet rs;
     try {
       // Register JDBC driver
       Class.forName("org.h2.Driver");
@@ -105,8 +103,6 @@ public class CurrentGroup {
    */
   public String listViewClick(String selectedGroup, String outputArea, Boolean ifMeetingLabel) {
     String finalOutPutString = "";
-    Connection conn;
-    ResultSet rs;
     String[] databaseOutputPlaceArr = {""};
     try {
       // Register JDBC driver
@@ -149,8 +145,6 @@ public class CurrentGroup {
    */
   public List listViewClick(String selectedGroup, String outputArea) {
     List<String> finalOutPutList = new ArrayList<>();
-    Connection conn;
-    ResultSet rs;
     try {
       // Register JDBC driver
       Class.forName("org.h2.Driver");
@@ -181,8 +175,6 @@ public class CurrentGroup {
    * @param newGroup is the groups currently selected in the ListView
    */
   public String addGroup(String newGroup) {
-    Connection conn;
-    ResultSet rs;
     try {
       // Register JDBC driver
       Class.forName("org.h2.Driver");
@@ -221,8 +213,6 @@ public class CurrentGroup {
    * @param name is the name of the user requesting the role
    */
   public String requestRole(String selectedGroup, String role, String name) {
-    Connection conn;
-    ResultSet rs;
     try {
       // Register JDBC driver
       Class.forName("org.h2.Driver");
@@ -264,8 +254,6 @@ public class CurrentGroup {
    * @return a Sting that states weather or not the method was successful
    */
   public String acceptRoleRequest(String selectedGroup, String role, String name) {
-    Connection conn;
-    ResultSet rs;
     try {
       // Register JDBC driver
       Class.forName("org.h2.Driver");
@@ -390,8 +378,6 @@ public class CurrentGroup {
    * @return a String that states weather or not the method was successful
    */
   public String createRole(String selectedGroup, String role) {
-    Connection conn;
-    ResultSet rs;
     try {
       // Register JDBC driver
       Class.forName("org.h2.Driver");
@@ -423,13 +409,37 @@ public class CurrentGroup {
     }
   }
 
+  /**
+   * This method adds a new group the the GROUPS table if the name of the groupName doesn't already exist.
+   * @param groupName is the name of the new group being added
+   * @param groupMeetingTimes is the meeting time of the new group being added
+   * @param groupMeetingPlace is the meeting place of the new group being added
+   * @param groupRoles is the roles of the new group being added
+   * @return a String that states weather or not the method was successful
+   */
   public String createGroup(String groupName, String groupMeetingTimes, String groupMeetingPlace,
       String groupRoles) {
-    System.out.println("name " + groupName);
-    System.out.println("time " + groupMeetingTimes);
-    System.out.println("place " + groupMeetingPlace);
-    System.out.println("roles " + groupRoles);
-    System.out.println();
-    return "ok";
+    try {
+      // Register JDBC driver
+      Class.forName("org.h2.Driver");
+      // Create a connection to database
+      conn = DriverManager.getConnection("jdbc:h2:./res/data", "", "");
+      String sql = "INSERT INTO GROUPS (NAME, TIME, PLACE, AVAILROLES) SELECT ?, ?, ?, ? WHERE NOT EXISTS( SELECT NAME FROM GROUPS WHERE NAME = ?);\n";
+      PreparedStatement pstmt = conn.prepareStatement(sql);
+      // Execute SQL string
+      pstmt.setString(1, groupName);
+      pstmt.setString(2, groupMeetingTimes);
+      pstmt.setString(3, groupMeetingPlace);
+      pstmt.setString(4, groupRoles);
+      pstmt.setString(5, groupName);
+      int added = pstmt.executeUpdate();
+      if (added == 0) {
+        return "Name Already Exists";
+      }
+      return "Group Created";
+    } catch (Exception e) {
+      e.printStackTrace();
+      return "Fail to Create Group";
+    }
   }
 }

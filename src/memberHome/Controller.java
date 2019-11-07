@@ -26,7 +26,6 @@ import javafx.stage.Stage;
  * @edited: Benjamin Deleuze removed Thomas Matragrano update to utilize the groups table.
  */
 public class Controller implements Initializable {
-
   @FXML
   private ListView<String> clubOptions;
   @FXML
@@ -46,11 +45,9 @@ public class Controller implements Initializable {
   @FXML
   private TextField requestRoleTA;
   @FXML
+  private Label actionOutputLabel;
+  @FXML
   private Button memberLogoutBt;
-  @FXML
-  private Label requestRoleOutputLabel;
-  @FXML
-  private Label joinedGroupLabel;
 
   CurrentGroup cGroup = new CurrentGroup(schoolID);
 
@@ -89,8 +86,8 @@ public class Controller implements Initializable {
     requestRolesLV.getItems().addAll(cGroup
         .listViewClick(currentGroupRequestRolesLV.getSelectionModel().getSelectedItem(),
             "AvailRoles"));
-    requestRoleOutputLabel.setText("");
-    joinedGroupLabel.setText("");
+    actionOutputLabel.setText("");
+    actionOutputLabel.setText("");
   }
 
   /**
@@ -99,7 +96,7 @@ public class Controller implements Initializable {
   public void joinGroupBtHandler() {
     String joinThisGroup = clubOptions.getSelectionModel().getSelectedItem();
     if (joinThisGroup != null) {
-      joinedGroupLabel.setText(cGroup.addGroup(joinThisGroup));
+      actionOutputLabel.setText(cGroup.addGroup(joinThisGroup));
     }
   }
 
@@ -110,7 +107,7 @@ public class Controller implements Initializable {
     String name = requestRoleTA.getText().trim();
     String role = requestRolesLV.getSelectionModel().getSelectedItem();
     if ((!name.equals("")) && (!(role == null))) {
-      requestRoleOutputLabel.setText(cGroup
+      actionOutputLabel.setText(cGroup
           .requestRole(currentGroupRequestRolesLV.getSelectionModel().getSelectedItem(),
               role, name));
     }

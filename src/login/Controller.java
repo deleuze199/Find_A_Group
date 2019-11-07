@@ -81,8 +81,9 @@ public class Controller {
             e.printStackTrace();
           }
         } else {
+          System.out.println("ok");
           FXMLLoader fxmlLoader = new FXMLLoader(
-              getClass().getResource("/memberHome/MemberHome.fxml"));
+              getClass().getResource("/memberHome/NewMemberHome.fxml"));
           Parent root1 = fxmlLoader.load();
           Stage stage = new Stage();
           stage.setScene(new Scene(root1));

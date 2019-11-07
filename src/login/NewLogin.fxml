@@ -66,7 +66,7 @@
           <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label fx:id="userIdDisplay" alignment="CENTER" prefHeight="23.0" prefWidth="173.0" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <Label fx:id="userIdDisplay" alignment="CENTER" prefHeight="23.0" prefWidth="208.0" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <font>
                   <Font size="18.0" />
                </font>

@@ -26,6 +26,7 @@ import javafx.stage.Stage;
  * @edited: Benjamin Deleuze removed Thomas Matragrano update to utilize the groups table.
  */
 public class Controller implements Initializable {
+
   @FXML
   private ListView<String> clubOptions;
   @FXML
@@ -57,7 +58,7 @@ public class Controller implements Initializable {
   public void logoutBtHandler() {
     try {
       FXMLLoader fxmlLoader = new FXMLLoader(
-          getClass().getResource("/login/Login.fxml"));
+          getClass().getResource("/login/NewLogin.fxml"));
       Parent root1 = fxmlLoader.load();
       Stage stage = new Stage();
       stage.setScene(new Scene(root1));

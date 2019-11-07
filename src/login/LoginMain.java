@@ -23,7 +23,7 @@ public class LoginMain extends Application {
 
   @Override
   public void start(Stage primaryStage) throws Exception {
-    Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
+    Parent root = FXMLLoader.load(getClass().getResource("NewLogin.fxml"));
     primaryStage.setTitle("Find A Group");
     primaryStage.setScene(new Scene(root, 350, 333));
     primaryStage.show();

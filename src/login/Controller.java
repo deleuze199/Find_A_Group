@@ -81,7 +81,6 @@ public class Controller {
             e.printStackTrace();
           }
         } else {
-          System.out.println("ok");
           FXMLLoader fxmlLoader = new FXMLLoader(
               getClass().getResource("/memberHome/NewMemberHome.fxml"));
           Parent root1 = fxmlLoader.load();

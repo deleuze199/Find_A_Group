@@ -37,17 +37,17 @@ public class Controller implements Initializable {
   @FXML
   private ListView<String> updateGroupsLV;
   @FXML
-  private TextField groupMeetingTime1;
+  private TextField groupMeetingTime1TF;
   @FXML
-  private TextField groupMeetingTime2;
+  private TextField groupMeetingTime2TF;
   @FXML
-  private TextField groupMeetingTime3;
+  private TextField groupMeetingTime3TF;
   @FXML
-  private TextField groupMeetingPlace1;
+  private TextField groupMeetingPlace1TF;
   @FXML
-  private TextField groupMeetingPlace2;
+  private TextField groupMeetingPlace2TF;
   @FXML
-  private TextField groupMeetingPlace3;
+  private TextField groupMeetingPlace3TF;
   @FXML
   private ListView<String> requestedRoleLV;
   @FXML
@@ -107,7 +107,40 @@ public class Controller implements Initializable {
    * in CurrentGroup class.
    */
   public void resetTimesBtHandler() {
-    actionOutputLabel.setText(cGroup.resetMeetingInfo());
+    String resetGroupTime1 = groupMeetingTime1TF.getText().trim();
+    String resetGroupTime2 = groupMeetingTime2TF.getText().trim();
+    String resetGroupTime3 = groupMeetingTime3TF.getText().trim();
+    String resetGroupPlace1 = groupMeetingPlace1TF.getText().trim();
+    String resetGroupPlace2 = groupMeetingPlace2TF.getText().trim();
+    String resetGroupPlace3 = groupMeetingPlace3TF.getText().trim();
+
+    String groupTime = null;
+    String groupPlace = null;
+    // if top one time and place field filled out
+    if ((!resetGroupTime1.equals("")) && (!resetGroupPlace1.equals(""))) {
+      groupTime = resetGroupTime1;
+      groupPlace = resetGroupPlace1;
+
+      // if top two time and place field filled out
+      if ((!resetGroupTime1.equals("")) && (!resetGroupPlace1.equals("")) && (!resetGroupTime2
+          .equals(""))
+          && (!resetGroupPlace2.equals(""))) {
+        groupTime += ", " + resetGroupTime2;
+        groupPlace += ", " + resetGroupPlace2;
+
+        // if all time and place fields filled out
+        if ((!resetGroupTime1.equals("")) && (!resetGroupPlace1.equals("")) && (!resetGroupTime2
+            .equals(""))
+            && (!resetGroupPlace2.equals("")) && (!resetGroupTime3.equals("")) && (!resetGroupPlace3
+            .equals(""))) {
+          groupTime += ", " + resetGroupTime3;
+          groupPlace += ", " + resetGroupPlace3;
+        }
+      }
+    }
+    actionOutputLabel.setText(cGroup
+        .resetMeetingInfo(updateGroupsLV.getSelectionModel().getSelectedItem(), groupTime,
+            groupPlace));
   }
 
   /**
@@ -115,8 +148,42 @@ public class Controller implements Initializable {
    * in CurrentGroup class.
    */
   public void addTimesBtHandler() {
-    actionOutputLabel.setText(cGroup.addToMeetingInfo());
+    String addGroupTime1 = groupMeetingTime1TF.getText().trim();
+    String addGroupTime2 = groupMeetingTime2TF.getText().trim();
+    String addGroupTime3 = groupMeetingTime3TF.getText().trim();
+    String addGroupPlace1 = groupMeetingPlace1TF.getText().trim();
+    String addGroupPlace2 = groupMeetingPlace2TF.getText().trim();
+    String addGroupPlace3 = groupMeetingPlace3TF.getText().trim();
+
+    String groupTime = null;
+    String groupPlace = null;
+    // if top one time and place field filled out
+    if ((!addGroupTime1.equals("")) && (!addGroupPlace1.equals(""))) {
+      groupTime = addGroupTime1;
+      groupPlace = addGroupPlace1;
+
+      // if top two time and place field filled out
+      if ((!addGroupTime1.equals("")) && (!addGroupPlace1.equals("")) && (!addGroupTime2
+          .equals(""))
+          && (!addGroupPlace2.equals(""))) {
+        groupTime += ", " + addGroupTime2;
+        groupPlace += ", " + addGroupPlace2;
+
+        // if all time and place fields filled out
+        if ((!addGroupTime1.equals("")) && (!addGroupPlace1.equals("")) && (!addGroupTime2
+            .equals(""))
+            && (!addGroupPlace2.equals("")) && (!addGroupTime3.equals("")) && (!addGroupPlace3
+            .equals(""))) {
+          groupTime += ", " + addGroupTime3;
+          groupPlace += ", " + addGroupPlace3;
+        }
+      }
+    }
+    actionOutputLabel.setText(cGroup
+        .addToMeetingInfo(updateGroupsLV.getSelectionModel().getSelectedItem(), groupTime,
+            groupPlace));
   }
+
 
   /**
    * This method populates the createRoleOutputLabel. It calls the createRole method in CurrentGroup

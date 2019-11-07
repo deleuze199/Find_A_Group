@@ -362,11 +362,11 @@ public class CurrentGroup {
     }
   }
 
-  public String resetMeetingInfo() {
+  public String resetMeetingInfo(String selectedGroup, String groupTime, String groupPlace) {
     return "";
   }
 
-  public String addToMeetingInfo() {
+  public String addToMeetingInfo(String selectedGroup, String groupTime, String groupPlace) {
     return "";
   }
 

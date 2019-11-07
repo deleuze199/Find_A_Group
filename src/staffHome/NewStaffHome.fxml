@@ -205,16 +205,16 @@
                               </Label>
                               <Button mnemonicParsing="false" onAction="#addTimesBtHandler" text="Add To Meeting Info" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="11" />
                               <Button mnemonicParsing="false" onAction="#resetTimesBtHandler" text="Reset Meeting Info" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="10" />
-                              <TextField fx:id="groupMeetingTime1" maxWidth="300.0" promptText="eg. Monday: 7:00 - 9:00 PM" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                              <TextField fx:id="groupMeetingTime1TF" maxWidth="300.0" promptText="eg. Monday: 7:00 - 9:00 PM" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                                  <GridPane.margin>
                                     <Insets />
                                  </GridPane.margin>
                               </TextField>
-                              <TextField fx:id="groupMeetingTime2" maxWidth="300.0" promptText="eg. Tuesday: 6:00 - 8:00 PM" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-                              <TextField fx:id="groupMeetingTime3" maxWidth="300.0" promptText="eg. Wednesday: 6:00 - 8:30 PM" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
-                              <TextField fx:id="groupMeetingPlace1" maxWidth="300.0" promptText="eg. Building 5-204" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
-                              <TextField fx:id="groupMeetingPlace2" maxWidth="300.0" promptText="eg. Football Field" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
-                              <TextField fx:id="groupMeetingPlace3" maxWidth="300.0" promptText="eg. Library" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
+                              <TextField fx:id="groupMeetingTime2TF" maxWidth="300.0" promptText="eg. Tuesday: 6:00 - 8:00 PM" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                              <TextField fx:id="groupMeetingTime3TF" maxWidth="300.0" promptText="eg. Wednesday: 6:00 - 8:30 PM" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                              <TextField fx:id="groupMeetingPlace1TF" maxWidth="300.0" promptText="eg. Building 5-204" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+                              <TextField fx:id="groupMeetingPlace2TF" maxWidth="300.0" promptText="eg. Football Field" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
+                              <TextField fx:id="groupMeetingPlace3TF" maxWidth="300.0" promptText="eg. Library" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
                            </children>
                         </GridPane>
                         <GridPane style="-fx-background-color: #000269;">

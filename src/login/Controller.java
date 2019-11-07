@@ -70,7 +70,7 @@ public class Controller {
         if (staff) {
           try {
             FXMLLoader fxmlLoader = new FXMLLoader(
-                getClass().getResource("/staffHome/StaffHome.fxml"));
+                getClass().getResource("/staffHome/NewStaffHome.fxml"));
             Parent root1 = fxmlLoader.load();
             Stage stage = new Stage();
             stage.setScene(new Scene(root1));

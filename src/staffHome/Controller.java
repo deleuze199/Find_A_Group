@@ -27,39 +27,45 @@ public class Controller implements Initializable {
   @FXML
   private Button staffLogoutBt;
   @FXML
-  private ListView<String> currentGroupsLV;
+  private Label actionOutputLabel;
   @FXML
-  private ListView<String> updateGroupsLV;
+  private ListView<String> currentGroupsLV;
   @FXML
   private Label groupMeetingLabel;
   @FXML
   private Label groupRolesLabel;
   @FXML
+  private ListView<String> updateGroupsLV;
+  @FXML
+  private TextField groupMeetingTime1;
+  @FXML
+  private TextField groupMeetingTime2;
+  @FXML
+  private TextField groupMeetingTime3;
+  @FXML
+  private TextField groupMeetingPlace1;
+  @FXML
+  private TextField groupMeetingPlace2;
+  @FXML
+  private TextField groupMeetingPlace3;
+  @FXML
   private ListView<String> requestedRoleLV;
-  @FXML
-  private Label acceptRoleOutputLabel;
-  @FXML
-  private Label createRoleOutputLabel;
-  @FXML
-  private Label updateTimeAndPlaceOutputLabel;
   @FXML
   private TextField createRoleTF;
   @FXML
-  private Label createGroupOutputLabel;
-  @FXML
   private TextField newGroupNameTF;
-  @FXML
-  private TextField newGroupTime1TF;
-  @FXML
-  private TextField newGroupTime2TF;
-  @FXML
-  private TextField newGroupTime3TF;
   @FXML
   private TextField newGroupRolesTF;
   @FXML
+  private TextField newGroupTime1TF;
+  @FXML
   private TextField newGroupPlace1TF;
   @FXML
+  private TextField newGroupTime2TF;
+  @FXML
   private TextField newGroupPlace2TF;
+  @FXML
+  private TextField newGroupTime3TF;
   @FXML
   private TextField newGroupPlace3TF;
 
@@ -70,9 +76,7 @@ public class Controller implements Initializable {
    * cGroup.listViewClick method the get the string for each label.
    */
   public void staffListViewClick() {
-    acceptRoleOutputLabel.setText("");
-    createRoleOutputLabel.setText("");
-    updateTimeAndPlaceOutputLabel.setText("");
+    actionOutputLabel.setText("");
     groupMeetingLabel.setText(
         cGroup.listViewClick(currentGroupsLV.getSelectionModel().getSelectedItem(), "Time", true));
     groupRolesLabel.setText(cGroup
@@ -93,7 +97,7 @@ public class Controller implements Initializable {
     String name = name_role[0];
     String role = name_role[1];
     if (requestedRole != null) {
-      acceptRoleOutputLabel.setText(cGroup
+      actionOutputLabel.setText(cGroup
           .acceptRoleRequest(updateGroupsLV.getSelectionModel().getSelectedItem(), role, name));
     }
   }
@@ -103,7 +107,7 @@ public class Controller implements Initializable {
    * in CurrentGroup class.
    */
   public void resetTimesBtHandler() {
-    updateTimeAndPlaceOutputLabel.setText(cGroup.resetMeetingInfo());
+    actionOutputLabel.setText(cGroup.resetMeetingInfo());
   }
 
   /**
@@ -111,7 +115,7 @@ public class Controller implements Initializable {
    * in CurrentGroup class.
    */
   public void addTimesBtHandler() {
-    updateTimeAndPlaceOutputLabel.setText(cGroup.addToMeetingInfo());
+    actionOutputLabel.setText(cGroup.addToMeetingInfo());
   }
 
   /**
@@ -121,7 +125,7 @@ public class Controller implements Initializable {
   public void createRoleBtHandler() {
     String newRole = createRoleTF.getText().trim();
     if (!newRole.equals("")) {
-      createRoleOutputLabel.setText(
+      actionOutputLabel.setText(
           cGroup.createRole(updateGroupsLV.getSelectionModel().getSelectedItem(), newRole));
     }
   }
@@ -167,7 +171,7 @@ public class Controller implements Initializable {
       if (newGroupRoles.equals("")) {
         newGroupRoles = null;
       }
-      createGroupOutputLabel
+      actionOutputLabel
           .setText(cGroup.createGroup(newGroupName, newGroupTime, newGroupPlace, newGroupRoles));
     }
   }

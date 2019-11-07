@@ -148,13 +148,15 @@ public class Controller implements Initializable {
         newGroupPlace = newGroupPlace1;
 
         // if top two time and place field filled out
-        if ((!newGroupTime1.equals("")) && (!newGroupPlace1.equals("")) && (!newGroupTime2.equals(""))
+        if ((!newGroupTime1.equals("")) && (!newGroupPlace1.equals("")) && (!newGroupTime2
+            .equals(""))
             && (!newGroupPlace2.equals(""))) {
           newGroupTime += ", " + newGroupTime2;
           newGroupPlace += ", " + newGroupPlace2;
 
           // if all time and place fields filled out
-          if ((!newGroupTime1.equals("")) && (!newGroupPlace1.equals("")) && (!newGroupTime2.equals(""))
+          if ((!newGroupTime1.equals("")) && (!newGroupPlace1.equals("")) && (!newGroupTime2
+              .equals(""))
               && (!newGroupPlace2.equals("")) && (!newGroupTime3.equals("")) && (!newGroupPlace3
               .equals(""))) {
             newGroupTime += ", " + newGroupTime3;
@@ -165,7 +167,8 @@ public class Controller implements Initializable {
       if (newGroupRoles.equals("")) {
         newGroupRoles = null;
       }
-      createGroupOutputLabel.setText(cGroup.createGroup(newGroupName, newGroupTime, newGroupPlace, newGroupRoles));
+      createGroupOutputLabel
+          .setText(cGroup.createGroup(newGroupName, newGroupTime, newGroupPlace, newGroupRoles));
     }
   }
 

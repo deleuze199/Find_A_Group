@@ -26,6 +26,14 @@ public class CurrentGroup {
    */
   public CurrentGroup(String schoolId) {
     this.schoolId = schoolId;
+    try {
+      // Register JDBC driver
+      Class.forName("org.h2.Driver");
+      // Create a connection to database
+      conn = DriverManager.getConnection("jdbc:h2:./res/data", "", "");
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
   }
 
   /**
@@ -37,10 +45,6 @@ public class CurrentGroup {
   public List<String> getCurrentGroupsList() {
     List<String> currentGroupsL = new ArrayList<>();
     try {
-      // Register JDBC driver
-      Class.forName("org.h2.Driver");
-      // Create a connection to database
-      conn = DriverManager.getConnection("jdbc:h2:./res/data", "", "");
       String sql = "SELECT * FROM user WHERE SchoolId = ?";
       PreparedStatement pstmt = conn.prepareStatement(sql);
       // Execute SQL string
@@ -69,10 +73,6 @@ public class CurrentGroup {
     List<String> availableGroupsL = new ArrayList<>();
     List<String> allGroupsL = new ArrayList<>();
     try {
-      // Register JDBC driver
-      Class.forName("org.h2.Driver");
-      // Create a connection to database
-      conn = DriverManager.getConnection("jdbc:h2:./res/data", "", "");
       String sql = "SELECT NAME FROM GROUPS";
       PreparedStatement pstmt = conn.prepareStatement(sql);
       // Execute SQL string
@@ -105,10 +105,6 @@ public class CurrentGroup {
     String finalOutPutString = "";
     String[] databaseOutputPlaceArr = {""};
     try {
-      // Register JDBC driver
-      Class.forName("org.h2.Driver");
-      // Create a connection to database
-      conn = DriverManager.getConnection("jdbc:h2:./res/data", "", "");
       String sql = "SELECT * FROM GROUPS WHERE NAME = ?";
       PreparedStatement pstmt = conn.prepareStatement(sql);
       // Execute SQL string
@@ -146,10 +142,6 @@ public class CurrentGroup {
   public List listViewClick(String selectedGroup, String outputArea) {
     List<String> finalOutPutList = new ArrayList<>();
     try {
-      // Register JDBC driver
-      Class.forName("org.h2.Driver");
-      // Create a connection to database
-      conn = DriverManager.getConnection("jdbc:h2:./res/data", "", "");
       String sql = "SELECT * FROM GROUPS WHERE NAME = ?";
       PreparedStatement pstmt = conn.prepareStatement(sql);
       // Execute SQL string
@@ -176,10 +168,6 @@ public class CurrentGroup {
    */
   public String addGroup(String newGroup) {
     try {
-      // Register JDBC driver
-      Class.forName("org.h2.Driver");
-      // Create a connection to database
-      conn = DriverManager.getConnection("jdbc:h2:./res/data", "", "");
       String sql = "SELECT * FROM user WHERE SchoolId = ?";
       PreparedStatement pstmt = conn.prepareStatement(sql);
       // Execute SQL string
@@ -214,10 +202,6 @@ public class CurrentGroup {
    */
   public String requestRole(String selectedGroup, String role, String name) {
     try {
-      // Register JDBC driver
-      Class.forName("org.h2.Driver");
-      // Create a connection to database
-      conn = DriverManager.getConnection("jdbc:h2:./res/data", "", "");
       String sql = "SELECT REQUESTEDROLES FROM GROUPS WHERE NAME = ?";
       PreparedStatement pstmt = conn.prepareStatement(sql);
       // Execute SQL string
@@ -255,10 +239,6 @@ public class CurrentGroup {
    */
   public String acceptRoleRequest(String selectedGroup, String role, String name) {
     try {
-      // Register JDBC driver
-      Class.forName("org.h2.Driver");
-      // Create a connection to database
-      conn = DriverManager.getConnection("jdbc:h2:./res/data", "", "");
       String sql = "SELECT TAKENROLES FROM GROUPS WHERE NAME = ?";
       PreparedStatement pstmt = conn.prepareStatement(sql);
       // Execute SQL string
@@ -362,28 +342,46 @@ public class CurrentGroup {
     }
   }
 
-  public String resetMeetingInfo(String selectedGroup, String groupTime, String groupPlace) {
-    return selectedGroup + " " + groupTime + " " + groupPlace;
-  }
-
   /**
-   * This method add meeting info (Place or Time) to the appropriate area.
+   * This method resets meeting info(Place or Time) to the appropriate area.
    *
    * @param selectedGroup is the group that the info is being added to
-   * @param meetingPlace  is Meeting Time for the group being added
-   * @param meetingTime   is the Meeting Place for the group being added
+   * @param meetingInfo   is the meetingInfo being added(Time or Place)
    * @param ifTime        is boolean to know if it adding th time or place of the group
    * @return a boolean that states if the method was successful
    */
-  public boolean addToMeetingInfo(String selectedGroup, String meetingTime, String meetingPlace,
-      boolean ifTime) {
+  public boolean resetMeetingInfo(String selectedGroup, String meetingInfo, boolean ifTime) {
+    String sql;
+    try {
+      if (ifTime) {
+        sql = "UPDATE GROUPS SET TIME = ? WHERE NAME = ?";
+      } else {
+        sql = "UPDATE GROUPS SET PLACE = ? WHERE NAME = ?";
+      }
+      PreparedStatement pstmt = conn.prepareStatement(sql);
+      // Execute SQL string
+      pstmt.setString(1, meetingInfo);
+      pstmt.setString(2, selectedGroup);
+      pstmt.executeUpdate();
+    } catch (Exception e) {
+      e.printStackTrace();
+      return false;
+    }
+    return true;
+  }
+
+  /**
+   * This method adds meeting info(Place or Time) to the appropriate area.
+   *
+   * @param selectedGroup is the group that the info is being added to
+   * @param meetingInfo   is the meetingInfo being added(Time or Place)
+   * @param ifTime        is boolean to know if it adding th time or place of the group
+   * @return a boolean that states if the method was successful
+   */
+  public boolean addToMeetingInfo(String selectedGroup, String meetingInfo, boolean ifTime) {
     String sql;
     String sql1;
     try {
-      // Register JDBC driver
-      Class.forName("org.h2.Driver");
-      // Create a connection to database
-      conn = DriverManager.getConnection("jdbc:h2:./res/data", "", "");
       if (ifTime) {
         sql = "SELECT TIME FROM GROUPS WHERE  NAME = ?";
       } else {
@@ -396,17 +394,9 @@ public class CurrentGroup {
       if (rs.next()) {
         String addedInfo = rs.getString(1);
         if (addedInfo == null) {
-          if (ifTime) {
-            addedInfo = meetingTime;
-          } else {
-            addedInfo = meetingPlace;
-          }
+          addedInfo = meetingInfo;
         } else {
-          if (ifTime) {
-            addedInfo += ", " + meetingTime;
-          } else {
-            addedInfo += ", " + meetingPlace;
-          }
+          addedInfo += ", " + meetingInfo;
         }
         if (ifTime) {
           sql1 = "UPDATE GROUPS SET TIME = ? WHERE NAME = ?";
@@ -437,10 +427,6 @@ public class CurrentGroup {
    */
   public String createRole(String selectedGroup, String role) {
     try {
-      // Register JDBC driver
-      Class.forName("org.h2.Driver");
-      // Create a connection to database
-      conn = DriverManager.getConnection("jdbc:h2:./res/data", "", "");
       String sql = "SELECT AVAILROLES FROM GROUPS WHERE NAME = ?";
       PreparedStatement pstmt = conn.prepareStatement(sql);
       // Execute SQL string
@@ -480,10 +466,6 @@ public class CurrentGroup {
   public String createGroup(String groupName, String groupMeetingTimes, String groupMeetingPlace,
       String groupRoles) {
     try {
-      // Register JDBC driver
-      Class.forName("org.h2.Driver");
-      // Create a connection to database
-      conn = DriverManager.getConnection("jdbc:h2:./res/data", "", "");
       String sql = "INSERT INTO GROUPS (NAME, TIME, PLACE, AVAILROLES) SELECT ?, ?, ?, ? WHERE NOT EXISTS( SELECT NAME FROM GROUPS WHERE NAME = ?);\n";
       PreparedStatement pstmt = conn.prepareStatement(sql);
       // Execute SQL string
@@ -493,6 +475,9 @@ public class CurrentGroup {
       pstmt.setString(4, groupRoles);
       pstmt.setString(5, groupName);
       int added = pstmt.executeUpdate();
+      if (added == 0) {
+        return "Name Already Exists";
+      }
       String sql1 = "SELECT * FROM user WHERE SchoolId = ?";
       PreparedStatement pstmt1 = conn.prepareStatement(sql1);
       // Execute SQL string
@@ -512,11 +497,7 @@ public class CurrentGroup {
         pstmt2.setString(2, schoolId);
         pstmt2.executeUpdate();
       }
-      if (added == 0) {
-        return "Name Already Exists";
-      } else {
-        return "Group Created";
-      }
+      return "Group Created";
     } catch (Exception e) {
       e.printStackTrace();
       return "Fail to Create Group";

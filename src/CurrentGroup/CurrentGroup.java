@@ -363,11 +363,69 @@ public class CurrentGroup {
   }
 
   public String resetMeetingInfo(String selectedGroup, String groupTime, String groupPlace) {
-    return "";
+    return selectedGroup + " " + groupTime + " " + groupPlace;
   }
 
-  public String addToMeetingInfo(String selectedGroup, String groupTime, String groupPlace) {
-    return "";
+  /**
+   * This method add meeting info (Place or Time) to the appropriate area.
+   *
+   * @param selectedGroup is the group that the info is being added to
+   * @param meetingPlace  is Meeting Time for the group being added
+   * @param meetingTime   is the Meeting Place for the group being added
+   * @param ifTime        is boolean to know if it adding th time or place of the group
+   * @return a boolean that states if the method was successful
+   */
+  public boolean addToMeetingInfo(String selectedGroup, String meetingTime, String meetingPlace,
+      boolean ifTime) {
+    String sql;
+    String sql1;
+    try {
+      // Register JDBC driver
+      Class.forName("org.h2.Driver");
+      // Create a connection to database
+      conn = DriverManager.getConnection("jdbc:h2:./res/data", "", "");
+      if (ifTime) {
+        sql = "SELECT TIME FROM GROUPS WHERE  NAME = ?";
+      } else {
+        sql = "SELECT PLACE FROM GROUPS WHERE  NAME = ?";
+      }
+      PreparedStatement pstmt = conn.prepareStatement(sql);
+      // Execute SQL string
+      pstmt.setString(1, selectedGroup);
+      rs = pstmt.executeQuery();
+      if (rs.next()) {
+        String addedInfo = rs.getString(1);
+        if (addedInfo == null) {
+          if (ifTime) {
+            addedInfo = meetingTime;
+          } else {
+            addedInfo = meetingPlace;
+          }
+        } else {
+          if (ifTime) {
+            addedInfo += ", " + meetingTime;
+          } else {
+            addedInfo += ", " + meetingPlace;
+          }
+        }
+        if (ifTime) {
+          sql1 = "UPDATE GROUPS SET TIME = ? WHERE NAME = ?";
+        } else {
+          sql1 = "UPDATE GROUPS SET PLACE = ? WHERE NAME = ?";
+        }
+        PreparedStatement pstmt1 = conn.prepareStatement(sql1);
+        // Execute SQL string
+        pstmt1.setString(1, addedInfo);
+        pstmt1.setString(2, selectedGroup);
+        System.out.println("added Info = " + addedInfo);
+        System.out.println("group = " + selectedGroup);
+        pstmt1.executeUpdate();
+      }
+      return true;
+    } catch (Exception e) {
+      e.printStackTrace();
+      return false;
+    }
   }
 
   /**
@@ -410,11 +468,13 @@ public class CurrentGroup {
   }
 
   /**
-   * This method adds a new group the the GROUPS table if the name of the groupName doesn't already exist.
-   * @param groupName is the name of the new group being added
+   * This method adds a new group the the GROUPS table if the name of the groupName doesn't already
+   * exist.
+   *
+   * @param groupName         is the name of the new group being added
    * @param groupMeetingTimes is the meeting time of the new group being added
    * @param groupMeetingPlace is the meeting place of the new group being added
-   * @param groupRoles is the roles of the new group being added
+   * @param groupRoles        is the roles of the new group being added
    * @return a String that states weather or not the method was successful
    */
   public String createGroup(String groupName, String groupMeetingTimes, String groupMeetingPlace,
@@ -433,10 +493,30 @@ public class CurrentGroup {
       pstmt.setString(4, groupRoles);
       pstmt.setString(5, groupName);
       int added = pstmt.executeUpdate();
+      String sql1 = "SELECT * FROM user WHERE SchoolId = ?";
+      PreparedStatement pstmt1 = conn.prepareStatement(sql1);
+      // Execute SQL string
+      pstmt1.setString(1, schoolId);
+      rs = pstmt1.executeQuery();
+      if (rs.next()) {
+        String currentGroup = rs.getString("Groups");
+        if (currentGroup.equals("null")) {
+          currentGroup = groupName;
+        } else {
+          currentGroup += ", " + groupName;
+        }
+        String sql2 = "UPDATE USER SET GROUPS = ? WHERE SCHOOLID = ?";
+        PreparedStatement pstmt2 = conn.prepareStatement(sql2);
+        // Execute SQL string
+        pstmt2.setString(1, currentGroup);
+        pstmt2.setString(2, schoolId);
+        pstmt2.executeUpdate();
+      }
       if (added == 0) {
         return "Name Already Exists";
+      } else {
+        return "Group Created";
       }
-      return "Group Created";
     } catch (Exception e) {
       e.printStackTrace();
       return "Fail to Create Group";

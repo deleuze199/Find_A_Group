@@ -3,6 +3,7 @@ package staffHome;
 import static login.Controller.schoolID;
 
 import CurrentGroup.CurrentGroup;
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -148,6 +149,7 @@ public class Controller implements Initializable {
    * in CurrentGroup class.
    */
   public void addTimesBtHandler() {
+    String selectedGroup = updateGroupsLV.getSelectionModel().getSelectedItem();
     String addGroupTime1 = groupMeetingTime1TF.getText().trim();
     String addGroupTime2 = groupMeetingTime2TF.getText().trim();
     String addGroupTime3 = groupMeetingTime3TF.getText().trim();
@@ -157,33 +159,50 @@ public class Controller implements Initializable {
 
     String groupTime = null;
     String groupPlace = null;
-    // if top one time and place field filled out
-    if ((!addGroupTime1.equals("")) && (!addGroupPlace1.equals(""))) {
-      groupTime = addGroupTime1;
-      groupPlace = addGroupPlace1;
+    if (selectedGroup != null) {
+      // if top one time and place field filled out
+      if ((!addGroupTime1.equals("")) && (!addGroupPlace1.equals(""))) {
+        groupTime = addGroupTime1;
+        groupPlace = addGroupPlace1;
 
-      // if top two time and place field filled out
-      if ((!addGroupTime1.equals("")) && (!addGroupPlace1.equals("")) && (!addGroupTime2
-          .equals(""))
-          && (!addGroupPlace2.equals(""))) {
-        groupTime += ", " + addGroupTime2;
-        groupPlace += ", " + addGroupPlace2;
-
-        // if all time and place fields filled out
+        // if top two time and place field filled out
         if ((!addGroupTime1.equals("")) && (!addGroupPlace1.equals("")) && (!addGroupTime2
             .equals(""))
-            && (!addGroupPlace2.equals("")) && (!addGroupTime3.equals("")) && (!addGroupPlace3
-            .equals(""))) {
-          groupTime += ", " + addGroupTime3;
-          groupPlace += ", " + addGroupPlace3;
+            && (!addGroupPlace2.equals(""))) {
+          groupTime += ", " + addGroupTime2;
+          groupPlace += ", " + addGroupPlace2;
+
+          // if all time and place fields filled out
+          if ((!addGroupTime1.equals("")) && (!addGroupPlace1.equals("")) && (!addGroupTime2
+              .equals(""))
+              && (!addGroupPlace2.equals("")) && (!addGroupTime3.equals("")) && (!addGroupPlace3
+              .equals(""))) {
+            groupTime += ", " + addGroupTime3;
+            groupPlace += ", " + addGroupPlace3;
+          }
         }
       }
-    }
-    actionOutputLabel.setText(cGroup
-        .addToMeetingInfo(updateGroupsLV.getSelectionModel().getSelectedItem(), groupTime,
-            groupPlace));
-  }
 
+      System.out.println(
+          updateGroupsLV.getSelectionModel().getSelectedItem() + " " + groupTime + " "
+              + groupPlace);
+      boolean addTime = cGroup
+          .addToMeetingInfo(updateGroupsLV.getSelectionModel().getSelectedItem(),
+              groupTime, groupPlace, true);
+      boolean addPlace = cGroup
+          .addToMeetingInfo(updateGroupsLV.getSelectionModel().getSelectedItem(), groupTime,
+              groupPlace, false);
+      if (addTime && addPlace) {
+        actionOutputLabel.setText(" Meeting Info Added");
+      } else if (addTime) {
+        actionOutputLabel.setText(" Failed to Add Place");
+      } else if (addPlace) {
+        actionOutputLabel.setText(" Failed to Add Time");
+      }
+    } else {
+      actionOutputLabel.setText("Select Group");
+    }
+  }
 
   /**
    * This method populates the createRoleOutputLabel. It calls the createRole method in CurrentGroup

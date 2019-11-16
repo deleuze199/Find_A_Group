@@ -175,7 +175,7 @@ public class CurrentGroup {
       rs = pstmt.executeQuery();
       if (rs.next()) {
         String currentGroup = rs.getString("Groups");
-        if (currentGroup.equals("null")) {
+        if (currentGroup == null) {
           currentGroup = newGroup;
         } else {
           currentGroup += ", " + newGroup;

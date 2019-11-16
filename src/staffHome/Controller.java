@@ -69,6 +69,12 @@ public class Controller implements Initializable {
   private TextField newGroupTime3TF;
   @FXML
   private TextField newGroupPlace3TF;
+  @FXML
+  private ListView<String> joinClubOptionsLV;
+  @FXML
+  private Label joinMeetingTimesLabel;
+  @FXML
+  private Label joinGroupRolesLabel;
 
   CurrentGroup cGroup = new CurrentGroup(schoolID);
 
@@ -83,9 +89,13 @@ public class Controller implements Initializable {
     groupRolesLabel.setText(cGroup
         .listViewClick(currentGroupsLV.getSelectionModel().getSelectedItem(), "TakenRoles", false));
     requestedRoleLV.getItems().clear();
-    ;
     requestedRoleLV.getItems().addAll(cGroup
         .listViewClick(updateGroupsLV.getSelectionModel().getSelectedItem(), "RequestedRoles"));
+    joinMeetingTimesLabel.setText(cGroup
+        .listViewClick(joinClubOptionsLV.getSelectionModel().getSelectedItem(), "Time", true));
+    joinGroupRolesLabel.setText(cGroup
+        .listViewClick(joinClubOptionsLV.getSelectionModel().getSelectedItem(), "TakenRoles",
+            false));
   }
 
   /**
@@ -269,6 +279,15 @@ public class Controller implements Initializable {
     }
   }
 
+  public void staffJoinGroupBtHandler() {
+    String joinThisGroup = joinClubOptionsLV.getSelectionModel().getSelectedItem();
+    if (joinThisGroup != null) {
+      actionOutputLabel.setText(cGroup.addGroup(joinThisGroup));
+    } else {
+      actionOutputLabel.setText("Select Group To Join");
+    }
+  }
+
   /**
    * This method is a handler to logout and return back to the login screen.
    */
@@ -293,6 +312,7 @@ public class Controller implements Initializable {
   @Override
   public void initialize(URL location, ResourceBundle resources) {
     List<String> currentGroupsList = cGroup.getCurrentGroupsList();
+    joinClubOptionsLV.getItems().addAll(cGroup.getAvailableGroupsList(currentGroupsList));
     currentGroupsLV.getItems().addAll(currentGroupsList);
     updateGroupsLV.getItems().addAll(currentGroupsList);
 

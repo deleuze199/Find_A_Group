@@ -79,6 +79,7 @@ public class Controller {
             closeStage.close();
           } catch (Exception e) {
             e.printStackTrace();
+            userIdDisplay.setText("Failed To Login");
           }
         } else {
           FXMLLoader fxmlLoader = new FXMLLoader(

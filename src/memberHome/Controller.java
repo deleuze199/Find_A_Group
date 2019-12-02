@@ -99,6 +99,8 @@ public class Controller implements Initializable {
     if (joinThisGroup != null) {
       actionOutputLabel.setText(cGroup.addGroup(joinThisGroup));
     }
+
+    loadListViews();
   }
 
   /**
@@ -114,21 +116,27 @@ public class Controller implements Initializable {
     }
   }
 
+  public void loadListViews(){
+    clubOptions.getItems().clear();
+    currentGroupsLV.getItems().clear();
+    currentGroupRequestRolesLV.getItems().clear();
+    List<String> currentGroupsList = cGroup.getCurrentGroupsList();
+    clubOptions.getItems().addAll(cGroup.getAvailableGroupsList(currentGroupsList));
+    currentGroupsLV.getItems().addAll(currentGroupsList);
+    currentGroupRequestRolesLV.getItems().addAll(currentGroupsList);
+    clubOptions.getSelectionModel().selectFirst();
+    clubOptions.setEditable(false);
+    currentGroupRequestRolesLV.getSelectionModel().selectFirst();
+    currentGroupRequestRolesLV.setEditable(false);
+    currentGroupsLV.setEditable(false);
+  }
+
   /**
    * This method populates the ListViews for clubOptions, currentGroups, and
    * currentGroupRequestRoles.
    */
   @Override
   public void initialize(URL location, ResourceBundle resources) {
-    List<String> currentGroupsList = cGroup.getCurrentGroupsList();
-    clubOptions.getItems().addAll(cGroup.getAvailableGroupsList(currentGroupsList));
-    currentGroupsLV.getItems().addAll(currentGroupsList);
-    currentGroupRequestRolesLV.getItems().addAll(currentGroupsList);
-
-    clubOptions.getSelectionModel().selectFirst();
-    clubOptions.setEditable(false);
-    currentGroupRequestRolesLV.getSelectionModel().selectFirst();
-    currentGroupRequestRolesLV.setEditable(false);
-    currentGroupsLV.setEditable(false);
+    loadListViews();
   }
 }

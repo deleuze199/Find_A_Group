@@ -111,6 +111,7 @@ public class Controller implements Initializable {
       actionOutputLabel.setText(cGroup
           .acceptRoleRequest(updateGroupsLV.getSelectionModel().getSelectedItem(), role, name));
     }
+    loadListViews();
   }
 
   /**
@@ -276,6 +277,7 @@ public class Controller implements Initializable {
       }
       actionOutputLabel
           .setText(cGroup.createGroup(newGroupName, newGroupTime, newGroupPlace, newGroupRoles));
+      loadListViews();
     }
   }
 
@@ -286,6 +288,7 @@ public class Controller implements Initializable {
     } else {
       actionOutputLabel.setText("Select Group To Join");
     }
+    loadListViews();
   }
 
   /**
@@ -306,17 +309,26 @@ public class Controller implements Initializable {
     }
   }
 
+  public void loadListViews(){
+    joinClubOptionsLV.getItems().clear();
+    currentGroupsLV.getItems().clear();
+    updateGroupsLV.getItems().clear();
+    requestedRoleLV.getItems().clear();
+    List<String> currentGroupsList = cGroup.getCurrentGroupsList();
+    requestedRoleLV.getItems().addAll(cGroup
+        .listViewClick(updateGroupsLV.getSelectionModel().getSelectedItem(), "RequestedRoles"));
+    joinClubOptionsLV.getItems().addAll(cGroup.getAvailableGroupsList(currentGroupsList));
+    currentGroupsLV.getItems().addAll(currentGroupsList);
+    updateGroupsLV.getItems().addAll(currentGroupsList);
+    currentGroupsLV.setEditable(false);
+    updateGroupsLV.setEditable(false);
+  }
+
   /**
    * This method populates the ListViews for updateGroupsLV and updateGroupsLV.
    */
   @Override
   public void initialize(URL location, ResourceBundle resources) {
-    List<String> currentGroupsList = cGroup.getCurrentGroupsList();
-    joinClubOptionsLV.getItems().addAll(cGroup.getAvailableGroupsList(currentGroupsList));
-    currentGroupsLV.getItems().addAll(currentGroupsList);
-    updateGroupsLV.getItems().addAll(currentGroupsList);
-
-    currentGroupsLV.setEditable(false);
-    updateGroupsLV.setEditable(false);
+    loadListViews();
   }
 }

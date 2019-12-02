@@ -105,7 +105,7 @@ public class Controller {
         }
         conn.close();
         pstmt.close();
-        registerFailMessage.setText("Registration Complete, Click Exit to return to Login");
+        registerFailMessage.setText("Registration Complete");
       } catch (ParseException | ClassNotFoundException | SQLException e) {
         e.printStackTrace();
         registerFailMessage.setText("Failed To Register");

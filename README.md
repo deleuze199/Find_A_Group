@@ -40,7 +40,7 @@ Staff create club/group
 
 Staff update club/group
 
-![Sample GIF](docs/.gif)
+![Sample GIF](docs/groupUpdate.gif)
 
 Staff create role
 

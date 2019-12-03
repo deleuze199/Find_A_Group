@@ -28,7 +28,7 @@ Register a user
 
 Member join club/group
 
-![Sample GIF](docs/RecordProductionGif.gif)
+![Sample GIF](docs/memberJoin.gif)
 
 Member request role
 

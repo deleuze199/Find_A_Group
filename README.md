@@ -23,6 +23,7 @@ This program is made for a group of people (such as a school) to organize and in
 
 ## Demonstrations
 Register a user
+
 ![Sample GIF](docs/register.gif)
 
 Member join club/group

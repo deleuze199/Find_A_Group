@@ -36,19 +36,19 @@ Member request role
 
 Staff create club/group
 
-![Sample GIF](docs/RecordProductionGif.gif)
+![Sample GIF](docs/.gif)
 
 Staff update club/group
 
-![Sample GIF](docs/RecordProductionGif.gif)
+![Sample GIF](docs/.gif)
 
 Staff create role
 
-![Sample GIF](docs/RecordProductionGif.gif)
+![Sample GIF](docs/.gif)
 
 Staff accept role
 
-![Sample GIF](docs/RecordProductionGif.gif)
+![Sample GIF](docs/roleAccept.gif)
 
 ## Documentation
 

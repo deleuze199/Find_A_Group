@@ -38,6 +38,8 @@ Staff create club/group
 
 ![Sample GIF](docs/groupCreate.2019-12-03 11_03_08.gif)
 
+k
+
 ![Sample GIF](docs/groupCreate.gif)
 
 Staff update club/group

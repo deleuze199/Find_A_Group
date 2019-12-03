@@ -23,8 +23,8 @@ This program is made for a group of people (such as a school) to organize and in
 
 ## Demonstrations
 Register a user
-
-![Sample GIF](docs/register.gif){:height="50%" width="50%"}
+<img src="https://github.com/deleuze199/Find_A_Group/docs/register.gif" width="48">
+![Sample GIF](docs/register.gif)
 
 Member join club/group
 

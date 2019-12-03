@@ -21,11 +21,38 @@ This program is made for a group of people (such as a school) to organize and in
 -   **Timelines**  
     -   Three 5-week sprints.
 
-## Demonstration
+## Demonstrations
+Register a user
+
+![Sample GIF](docs/AddProductGif.gif)
+
+Member join club/group
+
+![Sample GIF](docs/RecordProductionGif.gif)
+
+Member request role
+
+![Sample GIF](docs/RecordProductionGif.gif)
+
+Staff create club/group
+
+![Sample GIF](docs/RecordProductionGif.gif)
+
+Staff update club/group
+
+![Sample GIF](docs/RecordProductionGif.gif)
+
+Staff create role
+
+![Sample GIF](docs/RecordProductionGif.gif)
+
+Staff accept role
+
+![Sample GIF](docs/RecordProductionGif.gif)
 
 ## Documentation
 
-## Diagrams
+[JavaDoc](https://deleuze199.github.io/ProductionLineTracker/javadoc/index.html)
 
  ## Built With
  

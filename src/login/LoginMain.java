@@ -33,8 +33,6 @@ public class LoginMain extends Application {
   /**
    * This method checks if any user have already graduated(based on the date entered at
    * registration) and deletes that user form the table.
-   *
-   * @throws ParseException if date not properly inputted at registration
    */
   public void checkIfDeleteUser() {
     Connection conn;

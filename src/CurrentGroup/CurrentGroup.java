@@ -80,10 +80,10 @@ public class CurrentGroup {
       while (rs.next()) {
         allGroupsL.add(rs.getString(1));
       }
-      for (int i = 0; i < allGroupsL.size(); i++) {
-        if (currentGroupsL.contains(allGroupsL.get(i))) {
+      for (String s : allGroupsL) {
+        if (currentGroupsL.contains(s)) {
         } else {
-          availableGroupsL.add(allGroupsL.get(i));
+          availableGroupsL.add(s);
         }
       }
     } catch (Exception e) {
@@ -268,17 +268,17 @@ public class CurrentGroup {
           if (originalAvailableRoles != null) {
             String[] updatedAvailableRolesArr = originalAvailableRoles.split(", ");
             String updatedAvailableRoles = "";
-            for (int i = 0; i < updatedAvailableRolesArr.length; i++) {
-              if (!updatedAvailableRolesArr[i].equals(role)
-                  && updatedAvailableRolesArr[i] != null) {
+            for (String s : updatedAvailableRolesArr) {
+              if (!s.equals(role)
+                  && s != null) {
                 if (updatedAvailableRoles.equals("")) {
-                  updatedAvailableRoles += updatedAvailableRolesArr[i];
+                  updatedAvailableRoles += s;
                   System.out.println(
-                      "initial add " + updatedAvailableRolesArr[i] + " to avail, when role = "
+                      "initial add " + s + " to avail, when role = "
                           + role);
                 } else {
-                  updatedAvailableRoles += ", " + updatedAvailableRolesArr[i];
-                  System.out.println("adding " + updatedAvailableRolesArr[i] + " to avail");
+                  updatedAvailableRoles += ", " + s;
+                  System.out.println("adding " + s + " to avail");
                 }
               }
             }

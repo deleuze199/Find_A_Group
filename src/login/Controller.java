@@ -23,6 +23,7 @@ import javafx.stage.Stage;
  */
 public class Controller {
 
+  //<editor-fold desc="FXML Declarations">
   @FXML
   private TextField schoolId;
   @FXML
@@ -33,9 +34,8 @@ public class Controller {
   private Button registerBt;
   @FXML
   private Label userIdDisplay;
-
+  //</editor-fold>
   public static String schoolID;
-  private boolean staff;
 
   /**
    * This method uses a prepared statement object to check the database for the user name and
@@ -66,7 +66,7 @@ public class Controller {
       if (rs.next()) {
         userIdDisplay.setText(rs.getString("SchoolId"));
         schoolID = schoolId.getText();
-        staff = rs.getBoolean("StaffBool");
+        boolean staff = rs.getBoolean("StaffBool");
         if (staff) {
           try {
             FXMLLoader fxmlLoader = new FXMLLoader(

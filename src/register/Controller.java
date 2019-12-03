@@ -23,6 +23,7 @@ import javafx.stage.Stage;
  */
 public class Controller {
 
+  //<editor-fold desc="FXML Declarations">
   @FXML
   private TextField schoolId;
   @FXML
@@ -33,7 +34,7 @@ public class Controller {
   private Label registerFailMessage;
   @FXML
   private TextField graduateDateTF;
-
+  //</editor-fold>
   private boolean staffBoolean = false;
 
   /**

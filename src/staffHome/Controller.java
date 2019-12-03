@@ -3,7 +3,6 @@ package staffHome;
 import static login.Controller.schoolID;
 
 import CurrentGroup.CurrentGroup;
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -25,6 +24,7 @@ import javafx.stage.Stage;
  */
 public class Controller implements Initializable {
 
+  //<editor-fold desc="FXML Declarations">
   @FXML
   private Button staffLogoutBt;
   @FXML
@@ -75,8 +75,8 @@ public class Controller implements Initializable {
   private Label joinMeetingTimesLabel;
   @FXML
   private Label joinGroupRolesLabel;
-
-  CurrentGroup cGroup = new CurrentGroup(schoolID);
+  //</editor-fold>
+  private CurrentGroup cGroup = new CurrentGroup(schoolID);
 
   /**
    * This method populates the the current Meeting Times and Roles Labels. It calls the
@@ -281,6 +281,10 @@ public class Controller implements Initializable {
     }
   }
 
+  /**
+   * This method adds which ever group is selected in the joinClubOptionsLV to the staff members
+   * list of groups.
+   */
   public void staffJoinGroupBtHandler() {
     String joinThisGroup = joinClubOptionsLV.getSelectionModel().getSelectedItem();
     if (joinThisGroup != null) {
@@ -309,7 +313,10 @@ public class Controller implements Initializable {
     }
   }
 
-  public void loadListViews(){
+  /**
+   * This method populates all of the ListView for the staff member.
+   */
+  public void loadListViews() {
     joinClubOptionsLV.getItems().clear();
     currentGroupsLV.getItems().clear();
     updateGroupsLV.getItems().clear();
@@ -325,7 +332,7 @@ public class Controller implements Initializable {
   }
 
   /**
-   * This method populates the ListViews for updateGroupsLV and updateGroupsLV.
+   * This method populates all ListViews.
    */
   @Override
   public void initialize(URL location, ResourceBundle resources) {

@@ -27,6 +27,7 @@ import javafx.stage.Stage;
  */
 public class Controller implements Initializable {
 
+  //<editor-fold desc="FXML Declarations">
   @FXML
   private ListView<String> clubOptions;
   @FXML
@@ -49,8 +50,8 @@ public class Controller implements Initializable {
   private Label actionOutputLabel;
   @FXML
   private Button memberLogoutBt;
-
-  CurrentGroup cGroup = new CurrentGroup(schoolID);
+  //</editor-fold>
+  private final CurrentGroup cGroup = new CurrentGroup(schoolID);
 
   /**
    * This method is a handler to logout and return back to the login screen.
@@ -116,7 +117,11 @@ public class Controller implements Initializable {
     }
   }
 
-  public void loadListViews(){
+  /**
+   * This method populates the ListViews for clubOptions, currentGroups, and
+   * currentGroupRequestRoles.
+   */
+  public void loadListViews() {
     clubOptions.getItems().clear();
     currentGroupsLV.getItems().clear();
     currentGroupRequestRolesLV.getItems().clear();

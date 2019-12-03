@@ -36,7 +36,7 @@ Member request role
 
 Staff create club/group
 
-![Sample GIF](docs/.gif)
+![Sample GIF](docs/groupCreate.gif)
 
 Staff update club/group
 

@@ -51,6 +51,7 @@ public class Controller implements Initializable {
   @FXML
   private Button memberLogoutBt;
   //</editor-fold>
+
   private final CurrentGroup cGroup = new CurrentGroup(schoolID);
 
   /**

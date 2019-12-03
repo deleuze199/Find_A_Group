@@ -44,7 +44,7 @@ Staff update club/group
 
 Staff create role
 
-![Sample GIF](docs/.gif)
+![Sample GIF](docs/roleCreate.gif)
 
 Staff accept role
 

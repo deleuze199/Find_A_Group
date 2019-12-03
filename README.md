@@ -32,7 +32,7 @@ Member join club/group
 
 Member request role
 
-![Sample GIF](docs/RecordProductionGif.gif)
+![Sample GIF](docs/roleRequest.gif)
 
 Staff create club/group
 

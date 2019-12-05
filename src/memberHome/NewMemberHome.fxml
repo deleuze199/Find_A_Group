@@ -16,288 +16,351 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="790.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="memberHome.Controller">
    <top>
-      <GridPane style="-fx-background-color: #025700;" BorderPane.alignment="CENTER">
-        <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="20.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="20.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-            <Label text="Member Home Page" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
-               <font>
-                  <Font size="48.0" />
-               </font>
-            </Label>
-            <Button fx:id="memberLogoutBt" mnemonicParsing="false" onAction="#logoutBtHandler" text="Logout" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
-         </children>
-      </GridPane>
+     <GridPane style="-fx-background-color: #025700;" BorderPane.alignment="CENTER">
+       <columnConstraints>
+         <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0"
+           prefWidth="20.0"/>
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+         <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0"
+           prefWidth="20.0"/>
+       </columnConstraints>
+       <rowConstraints>
+         <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="10.0"
+           vgrow="SOMETIMES"/>
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+         <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="10.0"
+           vgrow="SOMETIMES"/>
+       </rowConstraints>
+       <Label text="Member Home Page" textFill="WHITE" GridPane.columnIndex="1"
+         GridPane.halignment="CENTER" GridPane.rowIndex="1">
+         <font>
+           <Font size="48.0"/>
+         </font>
+       </Label>
+       <Button fx:id="memberLogoutBt" mnemonicParsing="false" onAction="#logoutBtHandler"
+         text="Logout" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1"/>
+     </GridPane>
    </top>
    <center>
-      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
-        <tabs>
-            <Tab text="Group Details">
-               <content>
-                  <SplitPane dividerPositions="0.3333333, 0.6666666" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #000269;">
-                     <items>
-                        <GridPane>
-                          <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="20.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="20.0" />
-                          </columnConstraints>
-                          <rowConstraints>
-                            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
-                          </rowConstraints>
-                           <children>
-                              <Label text="Select Group" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </Label>
-                              <ListView fx:id="clubOptions" maxHeight="500.0" maxWidth="250.0" minHeight="400.0" minWidth="200.0" onMouseClicked="#memberListViewClick" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-                           </children>
-                        </GridPane>
-                        <GridPane>
-                          <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="20.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="20.0" />
-                          </columnConstraints>
-                          <rowConstraints>
-                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
-                          </rowConstraints>
-                           <children>
-                              <Label text="Meeting Times" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="meetingTimesLabel" maxHeight="500.0" maxWidth="250.0" minHeight="400.0" minWidth="200.0" style="-fx-border-color: white;" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                                 <padding>
-                                    <Insets left="10.0" />
-                                 </padding>
-                              </Label>
-                           </children>
-                        </GridPane>
-                        <GridPane>
-                          <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="20.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="20.0" />
-                          </columnConstraints>
-                          <rowConstraints>
-                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
-                          </rowConstraints>
-                           <children>
-                              <Button mnemonicParsing="false" onAction="#memberJoinGroupBtHandler" text="Join Group" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-                              <Label text="Group Roles" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="groupRolesLabel" maxHeight="500.0" maxWidth="250.0" minHeight="400.0" minWidth="200.0" style="-fx-border-color: white;" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                                 <padding>
-                                    <Insets left="10.0" />
-                                 </padding>
-                              </Label>
-                           </children>
-                        </GridPane>
-                     </items>
-                  </SplitPane>
-               </content>
-            </Tab>
-          <Tab text="Current Groups">
-               <content>
-                  <SplitPane dividerPositions="0.3333333, 0.6666666" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #000269;">
-                     <items>
-                        <GridPane>
-                           <columnConstraints>
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="20.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="20.0" />
-                           </columnConstraints>
-                           <rowConstraints>
-                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
-                           </rowConstraints>
-                           <children>
-                              <Label text="Select Group" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </Label>
-                              <ListView fx:id="currentGroupsLV" maxHeight="500.0" maxWidth="250.0" minHeight="400.0" minWidth="200.0" onMouseClicked="#memberListViewClick" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-                           </children>
-                        </GridPane>
-                        <GridPane>
-                           <columnConstraints>
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="20.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="20.0" />
-                           </columnConstraints>
-                           <rowConstraints>
-                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
-                           </rowConstraints>
-                           <children>
-                              <Label text="Meeting Times" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="currentGroupMeetingLabel" maxHeight="500.0" maxWidth="250.0" minHeight="400.0" minWidth="200.0" style="-fx-border-color: white;" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                                 <padding>
-                                    <Insets left="10.0" />
-                                 </padding>
-                              </Label>
-                           </children>
-                        </GridPane>
-                        <GridPane>
-                           <columnConstraints>
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="20.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="20.0" />
-                           </columnConstraints>
-                           <rowConstraints>
-                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
-                           </rowConstraints>
-                           <children>
-                              <Label text="Group Roles" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="currentGroupRolesLabel" maxHeight="500.0" maxWidth="250.0" minHeight="400.0" minWidth="200.0" style="-fx-border-color: white;" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                                 <padding>
-                                    <Insets left="10.0" />
-                                 </padding>
-                              </Label>
-                           </children>
-                        </GridPane>
-                     </items>
-                  </SplitPane>
-               </content>
-          </Tab>
-          <Tab text="Request Role">
-               <content>
-                  <SplitPane dividerPositions="0.5" prefHeight="160.0" prefWidth="200.0" style="-fx-background-color: #000269;">
-                     <items>
-                        <GridPane style="-fx-background-color: #000269;">
-                          <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="20.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="20.0" />
-                          </columnConstraints>
-                          <rowConstraints>
-                            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
-                          </rowConstraints>
-                           <children>
-                              <Label text="Select Group" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </Label>
-                              <ListView fx:id="currentGroupRequestRolesLV" maxWidth="250.0" onMouseClicked="#memberListViewClick" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-                           </children>
-                        </GridPane>
-                        <GridPane style="-fx-background-color: #000269;">
-                          <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="20.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="20.0" />
-                          </columnConstraints>
-                          <rowConstraints>
-                            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
-                          </rowConstraints>
-                           <children>
-                              <ListView fx:id="requestRolesLV" maxWidth="250.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-                              <Label text="Select Available Group Role" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </Label>
-                              <Button mnemonicParsing="false" onAction="#requestRoleBtHandler" text="Request Group Role" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
-                              <Label text=" Enter Requesters Name" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </Label>
-                              <TextField fx:id="requestRoleTA" maxWidth="300.0" promptText="eg. John" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
-                           </children>
-                        </GridPane>
-                     </items>
-                  </SplitPane>
-               </content>
-          </Tab>
-        </tabs>
-      </TabPane>
+     <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE"
+       BorderPane.alignment="CENTER">
+       <Tab text="Group Details">
+         <SplitPane dividerPositions="0.3333333, 0.6666666" prefHeight="200.0" prefWidth="200.0"
+           style="-fx-background-color: #000269;">
+           <GridPane>
+             <columnConstraints>
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0"
+                 prefWidth="20.0"/>
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0"
+                 prefWidth="20.0"/>
+             </columnConstraints>
+             <rowConstraints>
+               <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="20.0"
+                 vgrow="SOMETIMES"/>
+               <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0"
+                 vgrow="SOMETIMES"/>
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+               <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0"
+                 vgrow="SOMETIMES"/>
+               <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="20.0"
+                 vgrow="SOMETIMES"/>
+             </rowConstraints>
+             <Label text="Select Group" textFill="WHITE" GridPane.columnIndex="1"
+               GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <font>
+                 <Font size="18.0"/>
+               </font>
+             </Label>
+             <ListView fx:id="clubOptions" maxHeight="500.0" maxWidth="250.0"
+               minHeight="400.0" minWidth="200.0" onMouseClicked="#memberListViewClick"
+               GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2"/>
+           </GridPane>
+           <GridPane>
+             <columnConstraints>
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0"
+                 prefWidth="20.0"/>
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0"
+                 prefWidth="20.0"/>
+             </columnConstraints>
+             <rowConstraints>
+               <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="20.0"
+                 vgrow="SOMETIMES"/>
+               <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0"
+                 vgrow="SOMETIMES"/>
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+               <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0"
+                 vgrow="SOMETIMES"/>
+               <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="20.0"
+                 vgrow="SOMETIMES"/>
+             </rowConstraints>
+             <Label text="Meeting Times" textFill="WHITE" GridPane.columnIndex="1"
+               GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <font>
+                 <Font size="18.0"/>
+               </font>
+             </Label>
+             <Label fx:id="meetingTimesLabel" maxHeight="500.0" maxWidth="250.0"
+               minHeight="400.0" minWidth="200.0" style="-fx-border-color: white;"
+               textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER"
+               GridPane.rowIndex="2">
+               <font>
+                 <Font size="14.0"/>
+               </font>
+               <padding>
+                 <Insets left="10.0"/>
+               </padding>
+             </Label>
+           </GridPane>
+           <GridPane>
+             <columnConstraints>
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0"
+                 prefWidth="20.0"/>
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0"
+                 prefWidth="20.0"/>
+             </columnConstraints>
+             <rowConstraints>
+               <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="20.0"
+                 vgrow="SOMETIMES"/>
+               <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0"
+                 vgrow="SOMETIMES"/>
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+               <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0"
+                 vgrow="SOMETIMES"/>
+               <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="20.0"
+                 vgrow="SOMETIMES"/>
+             </rowConstraints>
+             <Button mnemonicParsing="false" onAction="#memberJoinGroupBtHandler"
+               text="Join Group" GridPane.columnIndex="1" GridPane.halignment="CENTER"
+               GridPane.rowIndex="3"/>
+             <Label text="Group Roles" textFill="WHITE" GridPane.columnIndex="1"
+               GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <font>
+                 <Font size="18.0"/>
+               </font>
+             </Label>
+             <Label fx:id="groupRolesLabel" maxHeight="500.0" maxWidth="250.0"
+               minHeight="400.0" minWidth="200.0" style="-fx-border-color: white;"
+               textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER"
+               GridPane.rowIndex="2">
+               <font>
+                 <Font size="14.0"/>
+               </font>
+               <padding>
+                 <Insets left="10.0"/>
+               </padding>
+             </Label>
+           </GridPane>
+         </SplitPane>
+       </Tab>
+       <Tab text="Current Groups">
+         <SplitPane dividerPositions="0.3333333, 0.6666666" prefHeight="200.0" prefWidth="200.0"
+           style="-fx-background-color: #000269;">
+           <GridPane>
+             <columnConstraints>
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0"
+                 prefWidth="20.0"/>
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0"
+                 prefWidth="20.0"/>
+             </columnConstraints>
+             <rowConstraints>
+               <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="20.0"
+                 vgrow="SOMETIMES"/>
+               <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0"
+                 vgrow="SOMETIMES"/>
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+               <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0"
+                 vgrow="SOMETIMES"/>
+               <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="20.0"
+                 vgrow="SOMETIMES"/>
+             </rowConstraints>
+             <Label text="Select Group" textFill="WHITE" GridPane.columnIndex="1"
+               GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <font>
+                 <Font size="18.0"/>
+               </font>
+             </Label>
+             <ListView fx:id="currentGroupsLV" maxHeight="500.0" maxWidth="250.0"
+               minHeight="400.0" minWidth="200.0" onMouseClicked="#memberListViewClick"
+               GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2"/>
+           </GridPane>
+           <GridPane>
+             <columnConstraints>
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0"
+                 prefWidth="20.0"/>
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0"
+                 prefWidth="20.0"/>
+             </columnConstraints>
+             <rowConstraints>
+               <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="20.0"
+                 vgrow="SOMETIMES"/>
+               <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0"
+                 vgrow="SOMETIMES"/>
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+               <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0"
+                 vgrow="SOMETIMES"/>
+               <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="20.0"
+                 vgrow="SOMETIMES"/>
+             </rowConstraints>
+             <Label text="Meeting Times" textFill="WHITE" GridPane.columnIndex="1"
+               GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <font>
+                 <Font size="18.0"/>
+               </font>
+             </Label>
+             <Label fx:id="currentGroupMeetingLabel" maxHeight="500.0" maxWidth="250.0"
+               minHeight="400.0" minWidth="200.0" style="-fx-border-color: white;"
+               textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER"
+               GridPane.rowIndex="2">
+               <font>
+                 <Font size="14.0"/>
+               </font>
+               <padding>
+                 <Insets left="10.0"/>
+               </padding>
+             </Label>
+           </GridPane>
+           <GridPane>
+             <columnConstraints>
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0"
+                 prefWidth="20.0"/>
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0"
+                 prefWidth="20.0"/>
+             </columnConstraints>
+             <rowConstraints>
+               <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="20.0"
+                 vgrow="SOMETIMES"/>
+               <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0"
+                 vgrow="SOMETIMES"/>
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+               <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0"
+                 vgrow="SOMETIMES"/>
+               <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="20.0"
+                 vgrow="SOMETIMES"/>
+             </rowConstraints>
+             <Label text="Group Roles" textFill="WHITE" GridPane.columnIndex="1"
+               GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <font>
+                 <Font size="18.0"/>
+               </font>
+             </Label>
+             <Label fx:id="currentGroupRolesLabel" maxHeight="500.0" maxWidth="250.0"
+               minHeight="400.0" minWidth="200.0" style="-fx-border-color: white;"
+               textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER"
+               GridPane.rowIndex="2">
+               <font>
+                 <Font size="14.0"/>
+               </font>
+               <padding>
+                 <Insets left="10.0"/>
+               </padding>
+             </Label>
+           </GridPane>
+         </SplitPane>
+       </Tab>
+       <Tab text="Request Role">
+         <SplitPane dividerPositions="0.5" prefHeight="160.0" prefWidth="200.0"
+           style="-fx-background-color: #000269;">
+           <GridPane style="-fx-background-color: #000269;">
+             <columnConstraints>
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0"
+                 prefWidth="20.0"/>
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0"
+                 prefWidth="20.0"/>
+             </columnConstraints>
+             <rowConstraints>
+               <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="20.0"
+                 vgrow="SOMETIMES"/>
+               <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0"
+                 vgrow="SOMETIMES"/>
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+               <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0"
+                 vgrow="SOMETIMES"/>
+               <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="20.0"
+                 vgrow="SOMETIMES"/>
+             </rowConstraints>
+             <Label text="Select Group" textFill="WHITE" GridPane.columnIndex="1"
+               GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <font>
+                 <Font size="18.0"/>
+               </font>
+             </Label>
+             <ListView fx:id="currentGroupRequestRolesLV" maxWidth="250.0"
+               onMouseClicked="#memberListViewClick" prefHeight="200.0" prefWidth="200.0"
+               GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2"/>
+           </GridPane>
+           <GridPane style="-fx-background-color: #000269;">
+             <columnConstraints>
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0"
+                 prefWidth="20.0"/>
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0"
+                 prefWidth="20.0"/>
+             </columnConstraints>
+             <rowConstraints>
+               <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="20.0"
+                 vgrow="SOMETIMES"/>
+               <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0"
+                 vgrow="SOMETIMES"/>
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+               <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="30.0"
+                 vgrow="SOMETIMES"/>
+               <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="30.0"
+                 vgrow="SOMETIMES"/>
+               <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="30.0"
+                 vgrow="SOMETIMES"/>
+               <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="20.0"
+                 vgrow="SOMETIMES"/>
+             </rowConstraints>
+             <ListView fx:id="requestRolesLV" maxWidth="250.0" prefHeight="200.0"
+               prefWidth="200.0" GridPane.columnIndex="1" GridPane.halignment="CENTER"
+               GridPane.rowIndex="2"/>
+             <Label text="Select Available Group Role" textFill="WHITE"
+               GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <font>
+                 <Font size="18.0"/>
+               </font>
+             </Label>
+             <Button mnemonicParsing="false" onAction="#requestRoleBtHandler"
+               text="Request Group Role" GridPane.columnIndex="1" GridPane.halignment="CENTER"
+               GridPane.rowIndex="5"/>
+             <Label text=" Enter Requester's Name" textFill="WHITE" GridPane.columnIndex="1"
+               GridPane.halignment="CENTER" GridPane.rowIndex="3">
+               <font>
+                 <Font size="18.0"/>
+               </font>
+             </Label>
+             <TextField fx:id="requestRoleTA" maxWidth="300.0" promptText="eg. John"
+               GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4"/>
+           </GridPane>
+         </SplitPane>
+       </Tab>
+     </TabPane>
    </center>
    <bottom>
-      <GridPane style="-fx-background-color: #025700;" BorderPane.alignment="CENTER">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-            <Label fx:id="actionOutputLabel" alignment="CENTER" prefHeight="23.0" prefWidth="410.0" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="1">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-         </children>
-      </GridPane>
+     <GridPane style="-fx-background-color: #025700;" BorderPane.alignment="CENTER">
+       <columnConstraints>
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+       </columnConstraints>
+       <rowConstraints>
+         <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="10.0"
+           vgrow="SOMETIMES"/>
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+         <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="10.0"
+           vgrow="SOMETIMES"/>
+       </rowConstraints>
+       <Label fx:id="actionOutputLabel" alignment="CENTER" prefHeight="23.0" prefWidth="410.0"
+         textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+         <font>
+           <Font size="18.0"/>
+         </font>
+       </Label>
+     </GridPane>
    </bottom>
 </BorderPane>

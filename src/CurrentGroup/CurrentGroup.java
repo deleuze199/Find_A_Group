@@ -1,4 +1,4 @@
-package CurrentGroup;
+package currentGroup;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -81,8 +81,7 @@ public class CurrentGroup {
         allGroupsL.add(rs.getString(1));
       }
       for (String s : allGroupsL) {
-        if (currentGroupsL.contains(s)) {
-        } else {
+        if (!currentGroupsL.contains(s)) {
           availableGroupsL.add(s);
         }
       }
@@ -300,10 +299,10 @@ public class CurrentGroup {
             pstmt4.setString(1, selectedGroup);
             rs = pstmt4.executeQuery();
             if (rs.next()) {
-              String originalRequetedRoles = rs.getString(1);
-              System.out.println(originalRequetedRoles);
-              if (originalRequetedRoles != null) {
-                String[] updatedRequestedRolesArr = originalRequetedRoles.split(", ");
+              String originalRequestedRoles = rs.getString(1);
+              System.out.println(originalRequestedRoles);
+              if (originalRequestedRoles != null) {
+                String[] updatedRequestedRolesArr = originalRequestedRoles.split(", ");
                 String updatedRequestedRoles = "";
                 for (int i = 0; i < updatedRequestedRolesArr.length; i++) {
                   if (!updatedRequestedRolesArr[i].equals(name + "/" + role)
@@ -352,7 +351,7 @@ public class CurrentGroup {
    * @return a Sting that states weather or not the method was successful
    */
   public String declineRoleRequest(String selectedGroup, String role, String name) {
-    String newrequestedRole = null;
+    String newRequestedRole = null;
     try {
       String sql = "SELECT REQUESTEDROLES FROM GROUPS WHERE NAME = ?";
       PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -364,28 +363,28 @@ public class CurrentGroup {
           String[] updatedRoleRequested = currentRequestedRoles.split(", ");
           if (updatedRoleRequested.length > 1) {
             if (updatedRoleRequested[0].equals(name + "/" + role)) {
-              newrequestedRole = updatedRoleRequested[1];
+              newRequestedRole = updatedRoleRequested[1];
               for (int i = 2; i < updatedRoleRequested.length; i++) {
-                newrequestedRole += ", " + updatedRoleRequested[i];
+                newRequestedRole += ", " + updatedRoleRequested[i];
               }
-              System.out.println("1 " + newrequestedRole);
+              System.out.println("1 " + newRequestedRole);
             } else {
-              newrequestedRole = updatedRoleRequested[0];
+              newRequestedRole = updatedRoleRequested[0];
               for (int i = 1; i < updatedRoleRequested.length; i++) {
                 if (!updatedRoleRequested[i].equals(name + "/" + role)) {
-                  newrequestedRole += ", " + updatedRoleRequested[i];
+                  newRequestedRole += ", " + updatedRoleRequested[i];
                 }
               }
-              System.out.println("2 " + newrequestedRole);
+              System.out.println("2 " + newRequestedRole);
             }
           }
         }
       }
-      System.out.println(newrequestedRole);
+      System.out.println(newRequestedRole);
       String sql1 = "UPDATE GROUPS SET REQUESTEDROLES = ? WHERE NAME = ?";
       PreparedStatement pstmt1 = conn.prepareStatement(sql1);
       // Execute SQL string
-      pstmt1.setString(1, newrequestedRole);
+      pstmt1.setString(1, newRequestedRole);
       pstmt1.setString(2, selectedGroup);
       pstmt1.executeUpdate();
       return "Role Declined";

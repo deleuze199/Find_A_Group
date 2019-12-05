@@ -13,93 +13,107 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="410.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="register.Controller">
    <top>
-      <GridPane style="-fx-background-color: #025700;" BorderPane.alignment="CENTER">
-        <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-            <Label text="Register" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="1">
-               <font>
-                  <Font size="36.0" />
-               </font>
-            </Label>
-         </children>
-      </GridPane>
+     <GridPane style="-fx-background-color: #025700;" BorderPane.alignment="CENTER">
+       <columnConstraints>
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+       </columnConstraints>
+       <rowConstraints>
+         <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="10.0"
+           vgrow="SOMETIMES"/>
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+         <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="10.0"
+           vgrow="SOMETIMES"/>
+       </rowConstraints>
+       <Label text="Register" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+         <font>
+           <Font size="36.0"/>
+         </font>
+       </Label>
+     </GridPane>
    </top>
    <bottom>
-      <GridPane style="-fx-background-color: #025700;" BorderPane.alignment="CENTER">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-            <Label fx:id="registerFailMessage" alignment="CENTER" prefHeight="23.0" prefWidth="243.0" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="1">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-         </children>
-      </GridPane>
+     <GridPane style="-fx-background-color: #025700;" BorderPane.alignment="CENTER">
+       <columnConstraints>
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+       </columnConstraints>
+       <rowConstraints>
+         <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="10.0"
+           vgrow="SOMETIMES"/>
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+         <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="10.0"
+           vgrow="SOMETIMES"/>
+       </rowConstraints>
+       <Label fx:id="registerFailMessage" alignment="CENTER" prefHeight="23.0" prefWidth="243.0"
+         textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+         <font>
+           <Font size="18.0"/>
+         </font>
+       </Label>
+     </GridPane>
    </bottom>
    <center>
-      <GridPane style="-fx-background-color: #000269;" BorderPane.alignment="CENTER">
-        <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="10.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="10.0" />
-        </columnConstraints>
-        <rowConstraints>
-            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-            <Label text="School ID" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-            <Label text="PIN" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-            <Label text="Graduation Date" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
-               <GridPane.margin>
-                  <Insets bottom="15.0" />
-               </GridPane.margin>
-            </Label>
-            <Label text="Are you a part of the staff?" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
-            <Label text="(If Known)" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
-               <GridPane.margin>
-                  <Insets top="15.0" />
-               </GridPane.margin>
-            </Label>
-            <Button fx:id="exitRegisterBt" mnemonicParsing="false" onAction="#exitRegistrationBtHandler" text="Exit" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
-            <Button fx:id="tryRegisterBt" mnemonicParsing="false" onAction="#registerUserBtHandler" text="Register" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
-            <CheckBox mnemonicParsing="false" onAction="#setStaffBoolean" text="Yes" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
-            <TextField fx:id="graduateDateTF" promptText="Month/Day/Year" GridPane.columnIndex="2" GridPane.rowIndex="3">
-               <GridPane.margin>
-                  <Insets left="15.0" right="15.0" />
-               </GridPane.margin>
-            </TextField>
-            <TextField fx:id="pin" promptText="Enter PIN" GridPane.columnIndex="2" GridPane.rowIndex="2">
-               <GridPane.margin>
-                  <Insets left="15.0" right="15.0" />
-               </GridPane.margin>
-            </TextField>
-            <TextField fx:id="schoolId" promptText="Enter School ID" GridPane.columnIndex="2" GridPane.rowIndex="1">
-               <GridPane.margin>
-                  <Insets left="15.0" right="15.0" />
-               </GridPane.margin>
-            </TextField>
-         </children>
-      </GridPane>
+     <GridPane style="-fx-background-color: #000269;" BorderPane.alignment="CENTER">
+       <columnConstraints>
+         <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0"
+           prefWidth="10.0"/>
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+         <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0"
+           prefWidth="10.0"/>
+       </columnConstraints>
+       <rowConstraints>
+         <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="10.0"
+           vgrow="SOMETIMES"/>
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+         <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="10.0"
+           vgrow="SOMETIMES"/>
+       </rowConstraints>
+       <Label text="School ID" textFill="WHITE" GridPane.columnIndex="1"
+         GridPane.halignment="CENTER" GridPane.rowIndex="1"/>
+       <Label text="PIN" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER"
+         GridPane.rowIndex="2"/>
+       <Label text="Graduation Date" textFill="WHITE" GridPane.columnIndex="1"
+         GridPane.halignment="CENTER" GridPane.rowIndex="3">
+         <GridPane.margin>
+           <Insets bottom="15.0"/>
+         </GridPane.margin>
+       </Label>
+       <Label text="Are you a part of the staff?" textFill="WHITE" GridPane.columnIndex="1"
+         GridPane.halignment="CENTER" GridPane.rowIndex="4"/>
+       <Label text="(If Known)" textFill="WHITE" GridPane.columnIndex="1"
+         GridPane.halignment="CENTER" GridPane.rowIndex="3">
+         <GridPane.margin>
+           <Insets top="15.0"/>
+         </GridPane.margin>
+       </Label>
+       <Button fx:id="exitRegisterBt" mnemonicParsing="false" onAction="#exitRegistrationBtHandler"
+         text="Exit" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5"/>
+       <Button mnemonicParsing="false" onAction="#registerUserBtHandler"
+         text="Register" GridPane.columnIndex="2" GridPane.halignment="CENTER"
+         GridPane.rowIndex="5"/>
+       <CheckBox mnemonicParsing="false" onAction="#setStaffBoolean" text="Yes" textFill="WHITE"
+         GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4"/>
+       <TextField fx:id="graduateDateTF" promptText="Month/Day/Year" GridPane.columnIndex="2"
+         GridPane.rowIndex="3">
+         <GridPane.margin>
+           <Insets left="15.0" right="15.0"/>
+         </GridPane.margin>
+       </TextField>
+       <TextField fx:id="pin" promptText="Enter PIN" GridPane.columnIndex="2" GridPane.rowIndex="2">
+         <GridPane.margin>
+           <Insets left="15.0" right="15.0"/>
+         </GridPane.margin>
+       </TextField>
+       <TextField fx:id="schoolId" promptText="Enter School ID" GridPane.columnIndex="2"
+         GridPane.rowIndex="1">
+         <GridPane.margin>
+           <Insets left="15.0" right="15.0"/>
+         </GridPane.margin>
+       </TextField>
+     </GridPane>
    </center>
 </BorderPane>

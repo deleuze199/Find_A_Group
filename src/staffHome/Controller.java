@@ -2,7 +2,7 @@ package staffHome;
 
 import static login.Controller.schoolID;
 
-import CurrentGroup.CurrentGroup;
+import currentGroup.CurrentGroup;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;

@@ -267,7 +267,7 @@
                                 </rowConstraints>
                                  <children>
                                     <Button mnemonicParsing="false" onAction="#acceptRolesBtHandler" text="Accept Role" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-                                    <Button mnemonicParsing="false" text="Decline Role" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                                    <Button mnemonicParsing="false" onAction="#declineRoleBtHandler" text="Decline Role" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
                                  </children>
                               </GridPane>
                            </children>

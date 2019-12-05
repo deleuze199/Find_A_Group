@@ -342,7 +342,9 @@ public class CurrentGroup {
     }
   }
 
-  
+  public String declineRoleRequest(String selectedGroup, String role, String name) {
+
+  }
 
   /**
    * This method resets meeting info(Place or Time) to the appropriate area.

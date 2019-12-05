@@ -114,6 +114,10 @@ public class Controller implements Initializable {
     loadListViews();
   }
 
+  public void declineRoleBtHandler(){
+
+  }
+
   /**
    * This method populates the updateTimeAndPlaceOutputLabel. It checks if and what information
    * needed have filled out and calls the resetMeetingInfo method in CurrentGroup class.

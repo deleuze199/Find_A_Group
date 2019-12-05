@@ -354,9 +354,9 @@ public class CurrentGroup {
         if (currentRequestedRoles != null) {
           String[] updatedRoleRequested = currentRequestedRoles.split(", ");
           if(updatedRoleRequested.length > 1) {
-            if(!updatedRoleRequested[0].equals(name + "/" + role)) {
+            if(updatedRoleRequested[0].equals(name + "/" + role)) {
               newrequestedRole = updatedRoleRequested[1];
-              for (int i = 1; i < updatedRoleRequested.length; i++) {
+              for (int i = 2; i < updatedRoleRequested.length; i++) {
                 newrequestedRole += ", " + updatedRoleRequested[i];
               }
               System.out.println("1 " + newrequestedRole);

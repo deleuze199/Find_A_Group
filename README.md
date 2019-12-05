@@ -66,4 +66,3 @@ Benjamin Deleuze
 ## Acknowledgments
 
 * https://www.w3schools.com/sql/
-* Nicholas Hansen helped with css

@@ -21,9 +21,6 @@ import javafx.stage.Stage;
  * This Controller class is for the Member Home screen.
  *
  * @author Benjamin Deleuze
- * @edited: Thomas Matragrano 10/12/19; added "initialize" and "memberMouseClick" methods and FXML
- * fields for them
- * @edited: Benjamin Deleuze removed Thomas Matragrano update to utilize the groups table.
  */
 public class Controller implements Initializable {
 

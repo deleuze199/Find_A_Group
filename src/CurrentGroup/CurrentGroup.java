@@ -164,6 +164,7 @@ public class CurrentGroup {
    * the user table.
    *
    * @param newGroup is the groups currently selected in the ListView
+   * @return a Sting that states weather or not the method was successful
    */
   public String addGroup(String newGroup) {
     try {
@@ -196,8 +197,10 @@ public class CurrentGroup {
   /**
    * This method request a role for the member.
    *
-   * @param role is the requested role selected from the ListView
-   * @param name is the name of the user requesting the role
+   * @param selectedGroup is the current group selected
+   * @param role          is the requested role selected from the ListView
+   * @param name          is the name of the user requesting the role
+   * @return a Sting that states weather or not the method was successful
    */
   public String requestRole(String selectedGroup, String role, String name) {
     try {

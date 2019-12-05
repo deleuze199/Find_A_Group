@@ -343,7 +343,47 @@ public class CurrentGroup {
   }
 
   public String declineRoleRequest(String selectedGroup, String role, String name) {
-
+    String newrequestedRole = null;
+    try {
+      String sql = "SELECT REQUESTEDROLES FROM GROUPS WHERE NAME = ?";
+      PreparedStatement pstmt = conn.prepareStatement(sql);
+      pstmt.setString(1, selectedGroup);
+      rs = pstmt.executeQuery();
+      if (rs.next()) {
+        String currentRequestedRoles = rs.getString(1);
+        if (currentRequestedRoles != null) {
+          String[] updatedRoleRequested = currentRequestedRoles.split(", ");
+          if(updatedRoleRequested.length > 1) {
+            if(!updatedRoleRequested[0].equals(name + "/" + role)) {
+              newrequestedRole = updatedRoleRequested[1];
+              for (int i = 1; i < updatedRoleRequested.length; i++) {
+                newrequestedRole += ", " + updatedRoleRequested[i];
+              }
+              System.out.println("1 " + newrequestedRole);
+            } else {
+              newrequestedRole = updatedRoleRequested[0];
+              for (int i = 1; i < updatedRoleRequested.length; i++) {
+                if (!updatedRoleRequested[i].equals(name + "/" + role)) {
+                  newrequestedRole += ", " + updatedRoleRequested[i];
+                }
+              }
+              System.out.println("2 " + newrequestedRole);
+            }
+          }
+        }
+      }
+      System.out.println(newrequestedRole);
+      String sql1 = "UPDATE GROUPS SET REQUESTEDROLES = ? WHERE NAME = ?";
+      PreparedStatement pstmt1 = conn.prepareStatement(sql1);
+      // Execute SQL string
+      pstmt1.setString(1, newrequestedRole);
+      pstmt1.setString(2, selectedGroup);
+      pstmt1.executeUpdate();
+      return "Role Declined";
+    } catch (Exception e) {
+      e.printStackTrace();
+      return "Fail to Decline Role";
+    }
   }
 
   /**

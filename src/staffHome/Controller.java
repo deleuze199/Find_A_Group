@@ -115,7 +115,15 @@ public class Controller implements Initializable {
   }
 
   public void declineRoleBtHandler(){
-
+    String requestedRole = requestedRoleLV.getSelectionModel().getSelectedItem();
+    String[] name_role = requestedRole.split("/");
+    String name = name_role[0];
+    String role = name_role[1];
+    if (requestedRole != null) {
+      actionOutputLabel.setText(cGroup
+          .declineRoleRequest(updateGroupsLV.getSelectionModel().getSelectedItem(), role, name));
+    }
+    loadListViews();
   }
 
   /**

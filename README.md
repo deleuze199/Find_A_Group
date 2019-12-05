@@ -50,6 +50,10 @@ Staff accept role
 
 ![Sample GIF](docs/roleAccept.gif)
 
+Staff decline role
+
+![Sample GIF](docs/roleDecline.gif)
+
 ## Documentation
 
 [JavaDoc](https://deleuze199.github.io/Find_A_Group/javadoc/index.html)

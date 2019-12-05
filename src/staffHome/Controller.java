@@ -99,7 +99,7 @@ public class Controller implements Initializable {
   }
 
   /**
-   * This method called the acceptRoleRequest method in the CurrentGroup class and populates the
+   * This method calls the acceptRoleRequest method in the CurrentGroup class and populates the
    * acceptRoleOutputLabel with a message that say weather or not it was successful.
    */
   public void acceptRolesBtHandler() {
@@ -114,7 +114,11 @@ public class Controller implements Initializable {
     loadListViews();
   }
 
-  public void declineRoleBtHandler(){
+  /**
+   * This method removes the "name/role" selected from the group selected. This method calls the
+   * declineRoleRequest method in the CurrentGroup class.
+   */
+  public void declineRoleBtHandler() {
     String requestedRole = requestedRoleLV.getSelectionModel().getSelectedItem();
     String[] name_role = requestedRole.split("/");
     String name = name_role[0];

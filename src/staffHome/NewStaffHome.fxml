@@ -257,8 +257,10 @@
                               <Button mnemonicParsing="false" onAction="#createRoleBtHandler" text="Create Requestable Role" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
                               <GridPane GridPane.columnIndex="1" GridPane.rowIndex="3">
                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="10.0" />
                                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="10.0" />
                                 </columnConstraints>
                                 <rowConstraints>
                                   <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
@@ -266,8 +268,8 @@
                                   <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
                                 </rowConstraints>
                                  <children>
-                                    <Button mnemonicParsing="false" onAction="#acceptRolesBtHandler" text="Accept Role" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-                                    <Button mnemonicParsing="false" onAction="#declineRoleBtHandler" text="Decline Role" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                                    <Button mnemonicParsing="false" onAction="#acceptRolesBtHandler" text="Accept Role" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                                    <Button mnemonicParsing="false" onAction="#declineRoleBtHandler" text="Decline Role" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
                                  </children>
                               </GridPane>
                            </children>

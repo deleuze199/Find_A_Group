@@ -342,6 +342,15 @@ public class CurrentGroup {
     }
   }
 
+  /**
+   * This method searches through the REQUESTEDROLES column in the selectedGroup row and removes the
+   * "name/role" from the String in the database.
+   *
+   * @param selectedGroup is the current group selected
+   * @param role          is the role of the requested role
+   * @param name          is the name that goes along with the requested role
+   * @return a Sting that states weather or not the method was successful
+   */
   public String declineRoleRequest(String selectedGroup, String role, String name) {
     String newrequestedRole = null;
     try {
@@ -353,8 +362,8 @@ public class CurrentGroup {
         String currentRequestedRoles = rs.getString(1);
         if (currentRequestedRoles != null) {
           String[] updatedRoleRequested = currentRequestedRoles.split(", ");
-          if(updatedRoleRequested.length > 1) {
-            if(updatedRoleRequested[0].equals(name + "/" + role)) {
+          if (updatedRoleRequested.length > 1) {
+            if (updatedRoleRequested[0].equals(name + "/" + role)) {
               newrequestedRole = updatedRoleRequested[1];
               for (int i = 2; i < updatedRoleRequested.length; i++) {
                 newrequestedRole += ", " + updatedRoleRequested[i];

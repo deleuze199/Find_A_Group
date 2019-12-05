@@ -342,6 +342,8 @@ public class CurrentGroup {
     }
   }
 
+  
+
   /**
    * This method resets meeting info(Place or Time) to the appropriate area.
    *

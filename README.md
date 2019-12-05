@@ -52,7 +52,7 @@ Staff accept role
 
 ## Documentation
 
-[JavaDoc](https://deleuze199.github.io/ProductionLineTracker/javadoc/index.html)
+[JavaDoc](https://deleuze199.github.io/Find_A_Group/javadoc/index.html)
 
  ## Built With
  
